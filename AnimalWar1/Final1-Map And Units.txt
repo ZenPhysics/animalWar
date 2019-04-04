@@ -1,0 +1,54 @@
+Final Project: Turn-Based Tactics Map
+Due: April 17th, 2019 before 5:40 PM
+
+Map Generation And Unit Acquisition
+
+For the turn-based tactics game you're building, create map building blocks (prefabs).  I
+recommend that these building blocks be tiles so that you can create a grid-based map;
+however, you are not required to use square tiles.  Hex-based or other map types are
+allowed, but it will be easier to work with square block tiles.
+
+-Different terrain types
+	-Create a different map tile prefab for each terrain type in your design document
+	-Don't forget to create a building block for each player's "base"
+		-This will be the final goal of the game--to occupy/destroy the enemy's base
+	-Each different terrain will have a different graphical representation
+		-You don't need to use artist-level quality graphics, but be sure that each type
+		of terrain is clearly distinguishable at a glance.
+		-You are welcome to use standard assets to accomplish this
+	-Consider how each of your tile prefabs will keep track of their unique benefits/penalties
+		-Possibilities:
+		-Movement cost per tile (Low movement cost for smooth terrain, high cost for rough terrain?)
+		-Provides/does not provide cover
+		-Keep a list of units that can travel this tile (all others cannot)
+		-Fuel recovered per turn while a unit is standing here
+		-Resource gained per turn while this tile is 'owned' by a player
+-You are required to submit ONE of the following (A map generator or 3 playable static maps):
+	-A random map generator
+		-You don't have to build a map generator, but I recommend you do this to make things easier on yourself
+		-A map generator does not have to be complex, but it should automatically place tiles and populate them
+		with proper data
+		-Enemy bases should be on opposite sides of the map
+		-Consider adding 'smart' code that will group similar tile types together to create logical terrain
+	-3 Playable pre-made maps
+		-Enemy bases should be on opposite sides of the map
+		-Maps should seem geographically logical (patches of water among patches of mountains don't make sense)
+-Map considerations:
+	-Consider how resources will be earned/gathered/gained
+		-Money earned through enemy kills?
+		-Control resource areas (gold mine/oil field/etc.)?
+		-Make allowances on your maps for the resource gathering process
+	-Consider how each unit will move
+		-Have your maps make sense for any unit type to be able to traverse the map in a reasonable manner
+	-Each tile should keep track of its location in the map (such as using row/column)
+-Unit generation and acquisition
+	-Create a prefab for each of your unit types
+	-Each prefab should be able to keep track of its own faction, health, attributes, strengths/weaknesses
+	-Assign a resource cost to each unit
+	-Create UI so that each player can:
+		-See how much resource he/she owns
+		-Click on their base or click a button to open the build/purchase/train menu
+		-Browse the available units for his/her faction
+		-Purchase/build/train units (make sure that the player has enough resource before allowing purchase)
+	-Newly created units should spawn at or next to the player's base
+	-You decide: Can a player build multiple units per turn?  Or only one?  How will that affect strategy in your game?
