@@ -1,13 +1,13 @@
 ###
 # Unity folders and files
 ###
-[Aa]ssets/AssetStoreTools*
-[Bb]uild/
-[Ll]ibrary/
-[Ll]ocal[Cc]ache/
-[Oo]bj/
-[Tt]emp/
-[Uu]nityGenerated/
+AnimalWar1/[Aa]ssets/AssetStoreTools*
+AnimalWar1/[Bb]uild/
+AnimalWar1/[Ll]ibrary/
+AnimalWar1/[Ll]ocal[Cc]ache/
+AnimalWar1/[Oo]bj/
+AnimalWar1/[Tt]emp/
+AnimalWar1/[Uu]nityGenerated/
 # file on crash reports
 sysinfo.txt
 # Unity3D generated meta files
@@ -16,7 +16,7 @@ sysinfo.txt
 ###
 # VS/MD solution and project files
 ###
-[Ee]xportedObj/
+AnimalWar1/[Ee]xportedObj/
 *.booproj
 *.csproj
 *.sln
