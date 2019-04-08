@@ -32,7 +32,7 @@ public class Animals : MonoBehaviour
 
     }
 
-    enum AnimalType
+    public enum AnimalType
     {
         Wolf,
         Deer,
@@ -53,7 +53,7 @@ public class Animals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instantiateAnimal(AnimalType.Deer);
+        InstantiateAnimal(AnimalType.Deer);
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class Animals : MonoBehaviour
     {
         
     }
-    private void instantiateAnimal(AnimalType animal)
+    public void InstantiateAnimal(AnimalType animal)
     {
         switch (animal)
         {
