@@ -13,6 +13,20 @@ public class Animals : MonoBehaviour
     public float Armor;
     public bool isEnemy;
 
+    public Transform Wolf;
+    public Transform Deer;
+    public Transform Moose;
+    public Transform Bear;
+    public Transform Fox;
+    public Transform Boar;
+
+    public Transform Dog;
+    public Transform Cat;
+    public Transform Bull;
+    public Transform Rooster;
+    public Transform Rabbit;
+    public Transform Pig;
+
     enum SpecialAttacks
     {
 
@@ -39,7 +53,7 @@ public class Animals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instantiateAnimal(AnimalType.Deer);
     }
 
     // Update is called once per frame
@@ -47,41 +61,84 @@ public class Animals : MonoBehaviour
     {
         
     }
-    private void instantiate(AnimalType animal)
+    private void instantiateAnimal(AnimalType animal)
     {
         switch (animal)
         {
             case AnimalType.Wolf:
-                Debug.Log("You choose Wolf");
+                Debug.Log("You chose Wolf");
+                Instantiate(Wolf, new Vector3(2.0f,2.0f,2.0f) , Quaternion.identity);
                 break;
 
             case AnimalType.Deer:
-                Debug.Log("You choose Deer");
+                Debug.Log("You chose Deer");
+                Instantiate(Deer, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
                 break;
 
             case AnimalType.Moose:
-                Debug.Log("You choose Moose");
+                Debug.Log("You chose Moose");
+                Instantiate(Moose, transform.position, Quaternion.identity);
                 break;
 
             case AnimalType.Bear:
-                Debug.Log("You choose  2");
+                Debug.Log("You choose Bear");
+                Instantiate(Bear, transform.position, Quaternion.identity);
                 break;
 
             case AnimalType.Fox:
-                Debug.Log("Case 2");
+                Debug.Log("You Chose Fox");
+                Instantiate(Fox, transform.position, Quaternion.identity);
                 break;
 
             case AnimalType.Boar:
-                Debug.Log("Case 2");
+                Debug.Log("You chose Boar");
+                Instantiate(Boar, transform.position, Quaternion.identity);
+                break;
+
+                ////////////////////////
+
+
+            case AnimalType.Dog:
+                Debug.Log("You chose Dog");
+                Instantiate(Dog, transform.position, Quaternion.identity);
+                break;
+
+            case AnimalType.Cat:
+                Debug.Log("You chose Cat");
+                Instantiate(Cat, transform.position, Quaternion.identity);
+                break;
+
+            case AnimalType.Bull:
+                Debug.Log("You chose Bull");
+                Instantiate(Bull, transform.position, Quaternion.identity);
+                break;
+
+            case AnimalType.Rooster:
+                Debug.Log("You choose Rooster");
+                Instantiate(Rooster, transform.position, Quaternion.identity);
+                break;
+
+            case AnimalType.Rabbit:
+                Debug.Log("You Chose Rabbit");
+                Instantiate(Rabbit, transform.position, Quaternion.identity);
+                break;
+
+            case AnimalType.Pig:
+                Debug.Log("You chose Pig");
+                Instantiate(Pig, transform.position, Quaternion.identity);
                 break;
 
 
             default:
-                Debug.Log("Default case");
+                Debug.Log("Not an animal");
                 break;
 
 
 
         }
+    }
+    public void TestInstantiate()
+    {
+        Instantiate(Wolf, new Vector3(4.0f, 4.0f, 4.0f), Quaternion.identity);
     }
 }
