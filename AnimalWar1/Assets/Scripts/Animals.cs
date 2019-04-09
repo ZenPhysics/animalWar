@@ -93,7 +93,7 @@ public class Animals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InstantiateAnimal(AnimalType.Deer);
+        //InstantiateAnimal(AnimalType.Deer);
     }
 
     // Update is called once per frame
@@ -102,13 +102,13 @@ public class Animals : MonoBehaviour
         
     }
 
-    public void InstantiateAnimal(AnimalType animal)
+    public void InstantiateAnimal(int switchNumber)
     {
-        switch (animal)
+        switch (switchNumber)
         {
-            case AnimalType.Wolf:
+            case 1:
                 Debug.Log("You chose Wolf");
-                var newWolf = Instantiate(Wolf, new Vector3(2.0f,2.0f,2.0f) , Quaternion.identity);
+                var newWolf = Instantiate(Wolf, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
                 var Script = newWolf.GetComponent<animalController>();
                 Script.MoveSpeed = 4;
                 Script.Health = 4;
@@ -120,7 +120,7 @@ public class Animals : MonoBehaviour
                 Script.RangeAttack = false;
                 break;
 
-            case AnimalType.Deer:
+            case 2:
                 Debug.Log("You chose Deer");
                 var newDeer = Instantiate(Deer, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
                 var Script1 = newDeer.GetComponent<animalController>();
@@ -134,7 +134,7 @@ public class Animals : MonoBehaviour
                 Script1.RangeAttack = false;
                 break;
 
-            case AnimalType.Moose:
+            case 3:
                 Debug.Log("You chose Moose");
                 var newMoose = Instantiate(Moose, transform.position, Quaternion.identity);
                 var Script2 = newMoose.GetComponent<animalController>();
@@ -148,7 +148,7 @@ public class Animals : MonoBehaviour
                 Script2.RangeAttack = false;
                 break;
 
-            case AnimalType.Bear:
+            case 4:
                 Debug.Log("You choose Bear");
                 var newBear = Instantiate(Bear, transform.position, Quaternion.identity);
                 var Script3 = newBear.GetComponent<animalController>();
@@ -162,7 +162,7 @@ public class Animals : MonoBehaviour
                 Script3.RangeAttack = false;
                 break;
 
-            case AnimalType.Fox:
+            case 5:
                 Debug.Log("You Chose Fox");
                 var newFox = Instantiate(Fox, transform.position, Quaternion.identity);
                 var Script4 = newFox.GetComponent<animalController>();
@@ -176,7 +176,7 @@ public class Animals : MonoBehaviour
                 Script4.RangeAttack = false;
                 break;
 
-            case AnimalType.Boar:
+            case 6:
                 Debug.Log("You chose Boar");
                 var newBoar = Instantiate(Boar, transform.position, Quaternion.identity);
                 var Script5 = newBoar.GetComponent<animalController>();
@@ -190,10 +190,10 @@ public class Animals : MonoBehaviour
                 Script5.RangeAttack = false;
                 break;
 
-                ////////////////////////
+            //////////////////////////
 
 
-            case AnimalType.Dog:
+            case 7:
                 Debug.Log("You chose Dog");
                 var newDog = Instantiate(Dog, transform.position, Quaternion.identity);
                 var eScript = newDog.GetComponent<animalController>();
@@ -207,7 +207,7 @@ public class Animals : MonoBehaviour
                 eScript.RangeAttack = false;
                 break;
 
-            case AnimalType.Cat:
+            case 8:
                 Debug.Log("You chose Cat");
                 var newCat = Instantiate(Cat, transform.position, Quaternion.identity);
                 var eScript1 = newCat.GetComponent<animalController>();
@@ -221,7 +221,7 @@ public class Animals : MonoBehaviour
                 eScript1.RangeAttack = false;
                 break;
 
-            case AnimalType.Bull:
+            case 9:
                 Debug.Log("You chose Bull");
                 var newBull = Instantiate(Bull, transform.position, Quaternion.identity);
                 var eScript2 = newBull.GetComponent<animalController>();
@@ -235,7 +235,7 @@ public class Animals : MonoBehaviour
                 eScript2.RangeAttack = false;
                 break;
 
-            case AnimalType.Rooster:
+            case 10:
                 Debug.Log("You choose Rooster");
                 var newRooster = Instantiate(Rooster, transform.position, Quaternion.identity);
                 var eScript3 = newRooster.GetComponent<animalController>();
@@ -249,7 +249,7 @@ public class Animals : MonoBehaviour
                 eScript3.RangeAttack = false;
                 break;
 
-            case AnimalType.Rabbit:
+            case 11:
                 Debug.Log("You Chose Rabbit");
                 var newRabbit = Instantiate(Rabbit, transform.position, Quaternion.identity);
                 var eScript4 = newRabbit.GetComponent<animalController>();
@@ -263,7 +263,7 @@ public class Animals : MonoBehaviour
                 eScript4.RangeAttack = false;
                 break;
 
-            case AnimalType.Pig:
+            case 12:
                 Debug.Log("You chose Pig");
                 var newPig = Instantiate(Pig, transform.position, Quaternion.identity);
                 var eScript5 = newPig.GetComponent<animalController>();

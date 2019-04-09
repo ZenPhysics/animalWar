@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 348}
   m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
-  controlID: 11
+  controlID: 89
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 12
+  controlID: 24
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PreFabs/Animal Prefabs
+    - Assets/PreFabs/Animals Used
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PreFabs/Animal Prefabs
+  - Assets/PreFabs/Animals Used
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\WorkingFolder\Projects\animalWar\AnimalWar1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c20a0000
-    m_LastClickedID: 2754
-    m_ExpandedIDs: 00000000a00900006c0b0000200c0000f60c0000b60e0000381000003612000000ca9a3b
+    m_SelectedIDs: 22110000
+    m_LastClickedID: 4386
+    m_ExpandedIDs: 00000000a6090000760b00002a0c0000000d0000c00e0000421000004012000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a00900006c0b0000200c0000f60c0000b60e00003810000036120000
+    m_ExpandedIDs: 00000000a6090000760b00002a0c0000000d0000c00e00004210000040120000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -402,9 +402,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d2c6ffff
-    m_LastClickedInstanceID: -14638
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a0120000
-      m_LastClickedID: 4768
-      m_ExpandedIDs: d4fbffff7c120000ba120000c2120000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 98faffffa2faffffa6faffffb4faffffb8faffffd4fbffff041300003613000068130000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -647,7 +647,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 1
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -660,18 +660,18 @@ MonoBehaviour:
       y: 17
       width: 917
       height: 404
-    m_Scale: {x: 1.25, y: 1.25}
-    m_Translation: {x: 458.50003, y: 202}
+    m_Scale: {x: 1.3257703, y: 1.3257703}
+    m_Translation: {x: 463.13412, y: 214.24448}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -366.80002
+      x: -349.33212
       y: -161.6
-      width: 733.6
-      height: 323.2
+      width: 691.6734
+      height: 304.72852
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
