@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\animalController.cs" />
     <Compile Include="Assets\Scripts\Animals.cs" />
     <Compile Include="Assets\Scripts\MapTile.cs" />
+    <Compile Include="Assets\Scripts\MenuManger.cs" />
     <Compile Include="Assets\Scripts\MPGenertaor.cs" />
     <Compile Include="Assets\Scripts\RockTileHandle.cs" />
     <Compile Include="Assets\Scripts\WaterTileHandle.cs" />
