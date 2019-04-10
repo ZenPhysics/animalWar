@@ -39,7 +39,7 @@ public class MPGenertaor : MonoBehaviour
         
     }
 
-    private void GenerateMap()
+    public void GenerateMap()
     {
         float MinX = -MapWidth/2;
         float MaxZ = MapHeight/2;
