@@ -126,7 +126,7 @@ public class MPGenertaor : MonoBehaviour
         {
             case 1:
                 GameObject newTileObject = Instantiate(PrefabList[1].Prefab);
-                newTileObject.transform.position = new Vector3(x, 0, z);
+                newTileObject.transform.position = new Vector3(x+1, 0, z-1);
                 return newTileObject;
             case 3:
                 newTileObject = Instantiate(PrefabList[3].Prefab);
@@ -138,7 +138,7 @@ public class MPGenertaor : MonoBehaviour
                 return newTileObject;
             case 5:
                 newTileObject = Instantiate(PrefabList[5].Prefab);
-                newTileObject.transform.position = new Vector3(x, 0, z);
+                newTileObject.transform.position = new Vector3(x+1, 0, z-1);
                 return newTileObject;
             default:
                 newTileObject = Instantiate(PrefabList[0].Prefab);

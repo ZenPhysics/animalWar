@@ -4,51 +4,16 @@ using UnityEngine;
 
 public class animalController : MonoBehaviour
 {
-    public float MoveSpeed
-    {
-        get { return MoveSpeed; }
-        set { MoveSpeed = value; }
-    }
-    public float Health
-    {
-        get { return Health; }
-        set { Health = value; }
-    }
-    public float Attack
-    {
-        get { return Attack; }
-        set { Attack = value; }
-    }
-    public float Armor
-    {
-        get { return Armor; }
-        set { Armor = value; }
-    }
-    public bool IsEnemy
-    {
-        get { return IsEnemy; }
-        set { IsEnemy = value; }
-    }
-    public bool CanSwim
-    {
-        get { return CanSwim; }
-        set { CanSwim = value; }
-    }
-    public bool CanFly
-    {
-        get { return CanFly; }
-        set { CanFly = value; }
-    }
-    public bool RangeAttack
-    {
-        get { return RangeAttack; }
-        set { RangeAttack = value; }
-    }
-    public int ResourceCost
-    {
-        get { return ResourceCost; }
-        set { ResourceCost = value; }
-    }
+    public float MoveSpeed;
+    public float Health;
+    public float Attack;
+    public float Armor;
+    public bool IsEnemy;
+    public bool CanSwim;
+    public bool CanFly;
+    public bool RangeAttack;
+    public int ResourceCost;
+    
 
 
     // Start is called before the first frame update
