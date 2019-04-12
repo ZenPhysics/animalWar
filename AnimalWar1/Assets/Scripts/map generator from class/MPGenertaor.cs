@@ -53,7 +53,7 @@ public class MPGenertaor : MonoBehaviour
         }
     }
 
-    private void UpdateTileList(MapTile tile)
+    public void UpdateTileList(MapTile tile)
     {
         int index = tile.Row * MapWidth + tile.Column;
         TileList[index] = tile;
@@ -75,29 +75,43 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i <= waterSeed; i++)
         {
             // Get coord for new tile
-            Xposition = Random.Range((int)MinX + 1, (int)MaxX - 1);
-            Zposition = Random.Range((int)MinZ + 1, (int)MaxZ - 1);
+            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
+            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Column = (int)Xposition + (MapWidth / 2);
+            Row = (int)-(Zposition - (MapWidth / 2));
 
-            // Spawn tile at new coord
-            GameObject newTileObj = SpawnWaterTile(Xposition, Zposition);
-            MapTile newTile = newTileObj.GetComponent<MapTile>();
+            MapTile existingTile = GetTileAt(Column, Row);
+            if (existingTile == null)
+            {               
+                // Spawn tile at new coord
+                GameObject newTileObj = SpawnOtherTile(TileType.DeepWater, Xposition, Zposition);
+                MapTile newTile = newTileObj.GetComponent<MapTile>();              
 
-            // Set column and row on new tile
-            newTile.Column = (int)Xposition + (MapWidth / 2);
-            newTile.Row = (int)-(Zposition - (MapWidth / 2));
 
-            // Update tile list with new tile
-            UpdateTileList(newTile);
+                // Set column and row on new tile
+                newTile.Column = Column;
+                newTile.Row = Row;
+
+                // Update tile list with new tile
+                UpdateTileList(newTile);
+
+                // Call the function to build water directly in order to build water before fill tiles
+                WaterTileHandle tileHandle = newTileObj.GetComponent<WaterTileHandle>();
+                tileHandle.GenerateWaterTiles();
+            }
+                
         }
         
         // Reset Xposition and Zposition before spawning fill tile
         Xposition = MinX;
         Zposition = MaxZ;
+        Column = 0;
+        Row = 0;
         
         // Spawns Fill Tile
-        while (Zposition >= MinZ)
+        while (Row < MapHeight)
         {
-            while(Xposition <= MaxX)
+            while(Column < MapWidth)
             {
                 MapTile existingTile = GetTileAt(Column, Row);
                 if (existingTile == null)
@@ -105,6 +119,7 @@ public class MPGenertaor : MonoBehaviour
                     // Spawn new tile
                     GameObject newTileObj = SpawnFillTile(Xposition, Zposition);
                     MapTile newTile = newTileObj.GetComponent<MapTile>();
+                    //Debug.Log("NewTile -- Column: " + Column + " Row: " + Row + " Spawned at (" + Xposition + "," + Zposition + ")");
 
                     // Set column and row on new tile
                     newTile.Column = Column;
@@ -179,16 +194,58 @@ public class MPGenertaor : MonoBehaviour
 
     }
 
-    private GameObject SpawnWaterTile (float x, float z)
+    private GameObject SpawnOtherTile (TileType type, float x, float z)
     {
-        // Spawn new water tile
-        GameObject newTileObject = Instantiate(PrefabList[1].Prefab);
+        Vector3 spawnLocation = new Vector3(x, 0, z);
 
-        // Move spawned water tile to given coord
-        newTileObject.transform.position = new Vector3(x, 0, z);
+        switch (type)
+        {
+            case TileType.DeepWater:
+                // Spawn new water tile
+                GameObject newTileObject = Instantiate(PrefabList[1].Prefab);
 
-        // Return new water tile
-        return newTileObject;
+                newTileObject.transform.position = spawnLocation;
+
+                // Return new water tile
+                return newTileObject;
+
+            case TileType.Forest:
+                // Spawn new water tile
+                newTileObject = Instantiate(PrefabList[3].Prefab);
+
+                newTileObject.transform.position = spawnLocation;
+
+                // Return new water tile
+                return newTileObject;
+
+            case TileType.Mountain:
+                // Spawn new water tile
+                newTileObject = Instantiate(PrefabList[5].Prefab);
+
+                newTileObject.transform.position = spawnLocation;
+
+                // Return new water tile
+                return newTileObject;
+
+            case TileType.Rock:
+                // Spawn new water tile
+                newTileObject = Instantiate(PrefabList[4].Prefab);
+
+                newTileObject.transform.position = spawnLocation;
+
+                // Return new water tile
+                return newTileObject;
+
+            default:
+                // Spawn new water tile
+                newTileObject = Instantiate(PrefabList[0].Prefab);
+
+                newTileObject.transform.position = spawnLocation;
+
+                // Return new water tile
+                return newTileObject;
+        }
+        
     }
 
     
