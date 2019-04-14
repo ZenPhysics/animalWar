@@ -7,27 +7,44 @@ public class MPGenertaor : MonoBehaviour
     public int MapWidth;
     public int MapHeight;
     public int waterSeed;
+    public int mountainSeed;
+    public int forestSeed;
+    public int rockSeed;
+    public FillTileType FillTile;
 
     [System.Serializable]
     public enum TileType
     {
-        Grass,
         DeepWater,
-        Sand,
         Mountain,
         Forest,
         Rock
     }
+
     [System.Serializable]
     public struct TilePrefabEntry
     {
-        public  TileType type;
+        public TileType type;
         public GameObject Prefab;
     }
-    
-    public List<TilePrefabEntry> PrefabList;
-    public TileType FillTile;
-    public List<MapTile> TileList = new List<MapTile>();
+
+    [System.Serializable]
+    public enum FillTileType
+    {
+        Grass,
+        Sand
+    }
+
+    [System.Serializable]
+    public struct FillTilePrefabEntry
+    {
+        public FillTileType type;
+        public GameObject Prefab;
+    }
+
+    public List<TilePrefabEntry> TilePrefabList;
+    public List<FillTilePrefabEntry> FillTilePrefabList;    
+    private List<MapTile> TileList = new List<MapTile>();
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +57,7 @@ public class MPGenertaor : MonoBehaviour
     void Update()
     {
         
-    }
+    }    
 
     private void InitializeTileList()
     {
@@ -72,7 +89,7 @@ public class MPGenertaor : MonoBehaviour
         int Row = 0;        
         
         //Spawns Water Tile
-        for (int i = 0; i <= waterSeed; i++)
+        for (int i = 0; i < waterSeed; i++)
         {
             // Get coord for new tile
             Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
@@ -101,7 +118,92 @@ public class MPGenertaor : MonoBehaviour
             }
                 
         }
-        
+
+        // Spawn Mountain Tile
+        for (int i = 0; i < mountainSeed; i++)
+        {
+            // Get coord for new tile
+            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
+            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Column = (int)Xposition + (MapWidth / 2);
+            Row = (int)-(Zposition - (MapWidth / 2));
+
+            MapTile existingTile = GetTileAt(Column, Row);
+            if (existingTile == null)
+            {
+                // Spawn tile at new coord
+                GameObject newTileObj = SpawnOtherTile(TileType.Mountain, Xposition, Zposition);
+                MapTile newTile = newTileObj.GetComponent<MapTile>();
+
+
+                // Set column and row on new tile
+                newTile.Column = Column;
+                newTile.Row = Row;
+
+                // Update tile list with new tile
+                UpdateTileList(newTile);
+            }
+
+        }
+
+        // Spawn Forest Tile
+        for (int i = 0; i < forestSeed; i++)
+        {
+            // Get coord for new tile
+            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
+            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Column = (int)Xposition + (MapWidth / 2);
+            Row = (int)-(Zposition - (MapWidth / 2));
+
+            MapTile existingTile = GetTileAt(Column, Row);
+            if (existingTile == null)
+            {
+                // Spawn tile at new coord
+                GameObject newTileObj = SpawnOtherTile(TileType.Forest, Xposition, Zposition);
+                MapTile newTile = newTileObj.GetComponent<MapTile>();
+
+
+                // Set column and row on new tile
+                newTile.Column = Column;
+                newTile.Row = Row;
+
+                // Update tile list with new tile
+                UpdateTileList(newTile);
+            }
+
+        }
+
+        // Spawn Rock Tile
+        for (int i = 0; i < rockSeed; i++)
+        {
+            // Get coord for new tile
+            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
+            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Column = (int)Xposition + (MapWidth / 2);
+            Row = (int)-(Zposition - (MapWidth / 2));
+
+            MapTile existingTile = GetTileAt(Column, Row);
+            if (existingTile == null)
+            {
+                // Spawn tile at new coord
+                GameObject newTileObj = SpawnOtherTile(TileType.Rock, Xposition, Zposition);
+                MapTile newTile = newTileObj.GetComponent<MapTile>();
+
+
+                // Set column and row on new tile
+                newTile.Column = Column;
+                newTile.Row = Row;
+
+                // Update tile list with new tile
+                UpdateTileList(newTile);
+
+                // Call the function to build water directly in order to build water before fill tiles
+                RockTileHandle tileHandle = newTileObj.GetComponent<RockTileHandle>();
+                tileHandle.GenerateLittleRocks();
+            }
+
+        }
+
         // Reset Xposition and Zposition before spawning fill tile
         Xposition = MinX;
         Zposition = MaxZ;
@@ -154,10 +256,10 @@ public class MPGenertaor : MonoBehaviour
     private GameObject CrateRandomTileAT(float x, float z)
     {
         //Create a random index to decide with prefab to create
-        int tileIndex = Random.Range(0, PrefabList.Count);
+        int tileIndex = Random.Range(0, TilePrefabList.Count);
 
         //Grab that 
-        GameObject prefab = PrefabList[tileIndex].Prefab;
+        GameObject prefab = TilePrefabList[tileIndex].Prefab;
 
         //instantiate a prefab
         GameObject newTileObject = Instantiate(prefab);
@@ -171,15 +273,15 @@ public class MPGenertaor : MonoBehaviour
     
     private GameObject SpawnFillTile (float x, float z)
     {
-        GameObject FillTileType = PrefabList[0].Prefab;
+        GameObject FillTileType = FillTilePrefabList[0].Prefab;
 
         switch (FillTile)
         {
-            case (TileType.Grass):
-                FillTileType = PrefabList[0].Prefab;
+            case (MPGenertaor.FillTileType.Grass):
+                FillTileType = FillTilePrefabList[0].Prefab;
                 break;
-            case (TileType.Sand):
-                FillTileType = PrefabList[2].Prefab;
+            case (MPGenertaor.FillTileType.Sand):
+                FillTileType = FillTilePrefabList[1].Prefab;
                 break;
         }
 
@@ -202,7 +304,7 @@ public class MPGenertaor : MonoBehaviour
         {
             case TileType.DeepWater:
                 // Spawn new water tile
-                GameObject newTileObject = Instantiate(PrefabList[1].Prefab);
+                GameObject newTileObject = Instantiate(TilePrefabList[0].Prefab);
 
                 newTileObject.transform.position = spawnLocation;
 
@@ -211,7 +313,7 @@ public class MPGenertaor : MonoBehaviour
 
             case TileType.Forest:
                 // Spawn new water tile
-                newTileObject = Instantiate(PrefabList[3].Prefab);
+                newTileObject = Instantiate(TilePrefabList[1].Prefab);
 
                 newTileObject.transform.position = spawnLocation;
 
@@ -220,7 +322,7 @@ public class MPGenertaor : MonoBehaviour
 
             case TileType.Mountain:
                 // Spawn new water tile
-                newTileObject = Instantiate(PrefabList[5].Prefab);
+                newTileObject = Instantiate(TilePrefabList[2].Prefab);
 
                 newTileObject.transform.position = spawnLocation;
 
@@ -229,7 +331,7 @@ public class MPGenertaor : MonoBehaviour
 
             case TileType.Rock:
                 // Spawn new water tile
-                newTileObject = Instantiate(PrefabList[4].Prefab);
+                newTileObject = Instantiate(TilePrefabList[3].Prefab);
 
                 newTileObject.transform.position = spawnLocation;
 
@@ -238,7 +340,7 @@ public class MPGenertaor : MonoBehaviour
 
             default:
                 // Spawn new water tile
-                newTileObject = Instantiate(PrefabList[0].Prefab);
+                newTileObject = Instantiate(TilePrefabList[0].Prefab);
 
                 newTileObject.transform.position = spawnLocation;
 

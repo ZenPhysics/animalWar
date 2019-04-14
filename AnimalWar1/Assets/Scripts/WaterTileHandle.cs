@@ -28,31 +28,7 @@ public class WaterTileHandle : MonoBehaviour
         mpGenertaor = mpObj.GetComponent<MPGenertaor>();
 
         DeepWaterTile = DeepWaterPrefab.GetComponent<MapTile>();
-        /*
-        GameObject newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x - 1, 0, DeepWaterPrefab.transform.position.z + 1);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x, 0, DeepWaterPrefab.transform.position.z + 1);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + 1, 0, DeepWaterPrefab.transform.position.z + 1);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x - 1, 0, DeepWaterPrefab.transform.position.z);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + 1, 0, DeepWaterPrefab.transform.position.z);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x - 1, 0, DeepWaterPrefab.transform.position.z - 1);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x, 0, DeepWaterPrefab.transform.position.z - 1);
-
-        newWaterTile = Instantiate(WaterPrefab);
-        newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + 1, 0, DeepWaterPrefab.transform.position.z - 1);
-        */
+        
         int x = -1;
         int z = 1;
 
@@ -62,7 +38,7 @@ public class WaterTileHandle : MonoBehaviour
             {
                 MapTile ExistingTile = mpGenertaor.GetTileAt(DeepWaterTile.Column + x, DeepWaterTile.Row + z);
                 if (ExistingTile == null)
-               {
+                {
                     GameObject newWaterTile = Instantiate(WaterPrefab);
                     newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + x, 0, DeepWaterPrefab.transform.position.z - z);                    
 
