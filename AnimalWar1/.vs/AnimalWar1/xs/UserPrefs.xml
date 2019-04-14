@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{8B43138F-7FC1-727C-526E-0C6CFEB4BA3C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuManger.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CoinScript.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/TestMoveScript.cs" Line="25" Column="9" />
+      <File FileName="Assets/Scripts/ScoringSystem.cs" Line="8" Column="33" />
+      <File FileName="Assets/Scripts/RockTileHandle.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WaterTileHandle.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UnitMover.cs" Line="18" Column="13" />
+      <File FileName="Assets/Scripts/MenuManger.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
