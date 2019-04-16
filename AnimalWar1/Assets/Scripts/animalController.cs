@@ -8,11 +8,14 @@ public class animalController : MonoBehaviour
     public float Health;
     public float Attack;
     public float Armor;
-    public bool IsEnemy;
-    public bool CanSwim;
-    public bool CanFly;
-    public bool RangeAttack;
+    public float size;
+    public int intimidation;
+    public int Anthem;
     public int ResourceCost;
+    public bool IsEnemy;
+  
+  
+    
     
 
 

@@ -24,6 +24,7 @@ public class MenuManger : MonoBehaviour
     {
         CanvasWild.SetActive(false);
         CanvasTame.SetActive(false);
+        Debug.Log("Turn off function called");
         //GameObject.Find("UICanvasTame").SetActive(false);
         //GameObject.Find("UICanvasWild").SetActive(false);
     }

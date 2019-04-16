@@ -280,3 +280,7 @@ C:\Users\Haden\Desktop\AnimalWar\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.
 C:\Users\Haden\Desktop\AnimalWar\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Haden\Desktop\AnimalWar\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.dll
 C:\Users\Haden\Desktop\AnimalWar\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.pdb
+C:\WorkingFolder\Projects\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\WorkingFolder\Projects\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\WorkingFolder\Projects\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.dll
+C:\WorkingFolder\Projects\animalWar\AnimalWar1\obj\Debug\Assembly-CSharp.pdb

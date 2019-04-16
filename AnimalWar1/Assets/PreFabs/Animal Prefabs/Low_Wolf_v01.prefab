@@ -883,6 +883,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dba2f8ec757b114ebdcf1b161eae173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 5
+  Health: 4
+  Attack: 5
+  Armor: 3
+  size: 4
+  intimidation: 4
+  Anthem: 0
+  ResourceCost: 25
+  IsEnemy: 1
 --- !u!1 &4354772018542110910
 GameObject:
   m_ObjectHideFlags: 0
