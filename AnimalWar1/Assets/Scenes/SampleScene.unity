@@ -903,6 +903,71 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3657217032577755495, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 71972967468570648, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184509842032464349, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 410
+      objectReference: {fileID: 0}
+    - target: {fileID: 352579931445981919, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Intimidation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675740831219147325, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815684747704410891, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760937760220220389, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Cost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760937760220220389, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760937760220220389, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576563809716214116, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492547337679046301, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: MoveSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559975258308950215, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645113387350087513, guid: 981e1e631b6c83c448b9ae9c6eaa2556,
+        type: 3}
+      propertyPath: m_Text
+      value: Size
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 981e1e631b6c83c448b9ae9c6eaa2556, type: 3}
 --- !u!1001 &4065275750608335433
@@ -920,7 +985,7 @@ PrefabInstance:
     - target: {fileID: 4065275750651521628, guid: 7e282105fed436a46930f0e851ab8e5f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4065275750651521617, guid: 7e282105fed436a46930f0e851ab8e5f,
         type: 3}
