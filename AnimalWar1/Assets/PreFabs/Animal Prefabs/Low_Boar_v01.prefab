@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039589754189976897}
   - component: {fileID: 2047355832232397441}
-  - component: {fileID: 5074509563348606780}
+  - component: {fileID: 8476027104102581609}
   m_Layer: 0
   m_Name: Low_Boar_v01
   m_TagString: Untagged
@@ -378,7 +378,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &5074509563348606780
+--- !u!114 &8476027104102581609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,21 +387,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2221140750670156783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041ae66ad80e80d46a258886b3b2770c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dba2f8ec757b114ebdcf1b161eae173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wolf: {fileID: 0}
-  Deer: {fileID: 0}
-  Moose: {fileID: 0}
-  Bear: {fileID: 0}
-  Fox: {fileID: 0}
-  Boar: {fileID: 0}
-  Dog: {fileID: 0}
-  Cat: {fileID: 0}
-  Bull: {fileID: 0}
-  Rooster: {fileID: 0}
-  Rabbit: {fileID: 0}
-  Pig: {fileID: 0}
+  MoveSpeed: 3
+  Health: 3
+  Attack: 4
+  Armor: 3
+  size: 4
+  intimidation: 3
+  Anthem: 0
+  ResourceCost: 20
+  IsEnemy: 1
 --- !u!1 &2320491598382941974
 GameObject:
   m_ObjectHideFlags: 0

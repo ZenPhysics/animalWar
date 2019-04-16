@@ -799,6 +799,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 171649755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1677333316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677333317}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677333317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677333316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 408.16928, y: 191.89099, z: -2.5648499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1702027363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1032,6 +1062,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 18848334, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 18848334, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161589164, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 105284941, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 105284941, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 963902249, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
       propertyPath: m_Name
       value: Dog Panel
@@ -1087,26 +1137,6 @@ PrefabInstance:
     - target: {fileID: 1500799414, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
       propertyPath: m_Text
       value: Anthem
-      objectReference: {fileID: 0}
-    - target: {fileID: 18848334, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 18848334, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161589164, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 105284941, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 105284941, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1207587021, guid: 59142c0483e75b34fb7d85e5a5c2e78f, type: 3}
       propertyPath: m_Color.r
