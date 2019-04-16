@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MapTile.cs" />
     <Compile Include="Assets\Scripts\MenuLoader.cs" />
     <Compile Include="Assets\Scripts\MenuManger.cs" />
+    <Compile Include="Assets\Scripts\Resources.cs" />
     <Compile Include="Assets\Scripts\RockTileHandle.cs" />
     <Compile Include="Assets\Scripts\ScoringSystem.cs" />
     <Compile Include="Assets\Scripts\WaterTileHandle.cs" />
