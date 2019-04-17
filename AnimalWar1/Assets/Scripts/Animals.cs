@@ -291,4 +291,14 @@ public class Animals : MonoBehaviour
         Instantiate(Wolf, new Vector3(4.0f, 4.0f, 4.0f), Quaternion.identity);
 
     }
+    public void ClearAllAnimals()
+    {
+        GameObject[] WildAnimals = GameObject.FindGameObjectsWithTag("WildAnimal");
+        foreach (GameObject Wild in WildAnimals)
+            GameObject.Destroy(Wild);
+
+        GameObject[] TameAnimals = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject Tame in WildAnimals)
+            GameObject.Destroy(Tame);
+    }
 }

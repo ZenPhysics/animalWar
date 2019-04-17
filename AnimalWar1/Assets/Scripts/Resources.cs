@@ -47,4 +47,9 @@ public class Resources : MonoBehaviour
         WildGoldText.text = ("TameGold = " + TameGold);
         TameGoldText.text = ("WildGold = " + WildGold);
     }
+    void ResetMoney()
+    {
+        TameGold = 100;
+        WildGold = 100;
+    }
 }
