@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 1078148991479930377}
   m_Layer: 0
   m_Name: Low_Moose_bull_v01
-  m_TagString: Untagged
+  m_TagString: WildAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

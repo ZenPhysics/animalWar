@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7191342408820309791}
   m_Layer: 0
   m_Name: Low_Rabbit_v01
-  m_TagString: Untagged
+  m_TagString: TameAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
