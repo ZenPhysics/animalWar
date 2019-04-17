@@ -49,4 +49,12 @@ public class MenuManger : MonoBehaviour
     {
         isWild = !isWild;
     }
+    public void CallTameMenu()
+    {
+        CanvasTame.SetActive(true);
+    }
+    public void CallWildMenu()
+    {
+        CanvasWild.SetActive(true);
+    }
 }
