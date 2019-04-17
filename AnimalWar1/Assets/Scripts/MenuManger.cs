@@ -45,4 +45,8 @@ public class MenuManger : MonoBehaviour
             //("UICanvasWild").SetActive(true);
         }
     }
+    public void ChangeMenu()
+    {
+        isWild = !isWild;
+    }
 }
