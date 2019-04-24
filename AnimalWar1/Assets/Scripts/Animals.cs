@@ -108,7 +108,7 @@ public class Animals : MonoBehaviour
         {
             case 1:
                 Debug.Log("You chose Wolf");
-                var newWolf = Instantiate(Wolf, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newWolf = Instantiate(Wolf, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script = newWolf.GetComponent<animalController>();
                 //Script.MoveSpeed = 4;
                 //Script.Health = 4;
@@ -122,7 +122,7 @@ public class Animals : MonoBehaviour
 
             case 2:
                 Debug.Log("You chose Deer");
-                var newDeer = Instantiate(Deer, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newDeer = Instantiate(Deer, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script1 = newDeer.GetComponent<animalController>();
                 //Script1.MoveSpeed = 4;
                 //Script1.Health = 4;
@@ -136,7 +136,7 @@ public class Animals : MonoBehaviour
 
             case 3:
                 Debug.Log("You chose Moose");
-                var newMoose = Instantiate(Moose, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newMoose = Instantiate(Moose, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script2 = newMoose.GetComponent<animalController>();
                 //Script2.MoveSpeed = 4;
                 //Script2.Health = 4;
@@ -150,7 +150,7 @@ public class Animals : MonoBehaviour
 
             case 4:
                 Debug.Log("You choose Bear");
-                var newBear = Instantiate(Bear, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newBear = Instantiate(Bear, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script3 = newBear.GetComponent<animalController>();
                 //Script3.MoveSpeed = 4;
                 //Script3.Health = 4;
@@ -164,7 +164,7 @@ public class Animals : MonoBehaviour
 
             case 5:
                 Debug.Log("You Chose Fox");
-                var newFox = Instantiate(Fox, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newFox = Instantiate(Fox, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script4 = newFox.GetComponent<animalController>();
                 //Script4.MoveSpeed = 4;
                 //Script4.Health = 4;
@@ -178,7 +178,7 @@ public class Animals : MonoBehaviour
 
             case 6:
                 Debug.Log("You chose Boar");
-                var newBoar = Instantiate(Boar, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newBoar = Instantiate(Boar, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var Script5 = newBoar.GetComponent<animalController>();
                 //Script5.MoveSpeed = 4;
                 //Script5.Health = 4;
@@ -195,7 +195,7 @@ public class Animals : MonoBehaviour
 
             case 7:
                 Debug.Log("You chose Dog");
-                var newDog = Instantiate(Dog, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newDog = Instantiate(Dog, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript = newDog.GetComponent<animalController>();
                 //eScript.MoveSpeed = 4;
                 //eScript.Health = 4;
@@ -209,7 +209,7 @@ public class Animals : MonoBehaviour
 
             case 8:
                 Debug.Log("You chose Cat");
-                var newCat = Instantiate(Cat, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newCat = Instantiate(Cat, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript1 = newCat.GetComponent<animalController>();
                 //eScript1.MoveSpeed = 4;
                 //eScript1.Health = 4;
@@ -223,7 +223,7 @@ public class Animals : MonoBehaviour
 
             case 9:
                 Debug.Log("You chose Bull");
-                var newBull = Instantiate(Bull, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newBull = Instantiate(Bull, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript2 = newBull.GetComponent<animalController>();
                 //eScript2.MoveSpeed = 4;
                 //eScript2.Health = 4;
@@ -237,7 +237,7 @@ public class Animals : MonoBehaviour
 
             case 10:
                 Debug.Log("You choose Rooster");
-                var newRooster = Instantiate(Rooster, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newRooster = Instantiate(Rooster, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript3 = newRooster.GetComponent<animalController>();
                 //eScript3.MoveSpeed = 4;
                 //eScript3.Health = 4;
@@ -251,7 +251,7 @@ public class Animals : MonoBehaviour
 
             case 11:
                 Debug.Log("You Chose Rabbit");
-                var newRabbit = Instantiate(Rabbit, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newRabbit = Instantiate(Rabbit, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript4 = newRabbit.GetComponent<animalController>();
                 //eScript4.MoveSpeed = 4;
                 //eScript4.Health = 4;
@@ -265,7 +265,7 @@ public class Animals : MonoBehaviour
 
             case 12:
                 Debug.Log("You chose Pig");
-                var newPig = Instantiate(Pig, new Vector3(2.0f, 2.0f, 2.0f), Quaternion.identity);
+                var newPig = Instantiate(Pig, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
                 var eScript5 = newPig.GetComponent<animalController>();
                 //eScript5.MoveSpeed = 4;
                 //eScript5.Health = 4;
