@@ -630,9 +630,10 @@ MonoBehaviour:
   ConnectPoint: {fileID: 205047426861181170}
   Column: 0
   Row: 0
-  MovementCost: 0
-  ProvidesCover: 0
-  ResourcePerTurn: 0
+  MovementCost: 3
+  CanWalkOver: 0
+  CanSwimThrough: 0
+  CanFlyOver: 1
 --- !u!114 &5690838577306711248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +649,3 @@ MonoBehaviour:
   RockPrefab: {fileID: 8148592846597997836}
   LittleRockPrefab: {fileID: 8088540904650616568, guid: 9cc4be8d10f1c5b4d8eee339a09a4e13,
     type: 3}
-  SandPrefab: {fileID: 6793600881839040881, guid: 30a5677f0646760478a2d6733b003ed4,
-    type: 3}
-  type: 0

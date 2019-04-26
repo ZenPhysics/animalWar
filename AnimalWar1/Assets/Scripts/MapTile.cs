@@ -9,8 +9,9 @@ public class MapTile : MonoBehaviour
     public int Row;
 
     public float MovementCost;
-    public bool ProvidesCover;
-    public int ResourcePerTurn;
+    public bool CanWalkOver;
+    public bool CanSwimThrough;
+    public bool CanFlyOver;
 
 
     // Start is called before the first frame update

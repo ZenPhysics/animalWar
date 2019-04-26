@@ -78,9 +78,10 @@ MonoBehaviour:
   ConnectPoint: {fileID: 8663299770653814952}
   Column: 0
   Row: 0
-  MovementCost: 0
-  ProvidesCover: 0
-  ResourcePerTurn: 0
+  MovementCost: 1
+  CanWalkOver: 1
+  CanSwimThrough: 0
+  CanFlyOver: 1
 --- !u!1 &7025487082510718509
 GameObject:
   m_ObjectHideFlags: 0
