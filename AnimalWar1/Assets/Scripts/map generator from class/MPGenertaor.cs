@@ -46,6 +46,11 @@ public class MPGenertaor : MonoBehaviour
     public List<FillTilePrefabEntry> FillTilePrefabList;    
     private List<MapTile> TileList = new List<MapTile>();
 
+    public int GetMapWidth()
+    {
+        return MapWidth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

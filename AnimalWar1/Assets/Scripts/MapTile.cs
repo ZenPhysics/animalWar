@@ -25,4 +25,9 @@ public class MapTile : MonoBehaviour
     {
         
     }
+
+    public Transform GetConnectPoint()
+    {
+        return ConnectPoint;
+    }
 }
