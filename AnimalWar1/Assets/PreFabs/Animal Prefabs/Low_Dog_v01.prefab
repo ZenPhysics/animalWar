@@ -639,7 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalRow: 0
   AnimalColumn: 0
-  MovementPoints: 10
+  MovementPoints: 100
   Health: 4
   Attack: 5
   Armor: 5

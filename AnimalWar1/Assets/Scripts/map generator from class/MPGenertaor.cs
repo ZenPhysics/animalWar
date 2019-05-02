@@ -18,7 +18,9 @@ public class MPGenertaor : MonoBehaviour
         DeepWater,
         Mountain,
         Forest,
-        Rock
+        Rock,
+        HomeBase,
+        EnemyBase
     }
 
     [System.Serializable]
@@ -44,7 +46,7 @@ public class MPGenertaor : MonoBehaviour
 
     public List<TilePrefabEntry> TilePrefabList;
     public List<FillTilePrefabEntry> FillTilePrefabList;    
-    private List<MapTile> TileList = new List<MapTile>();
+    public List<MapTile> TileList = new List<MapTile>();
 
     public int GetMapWidth()
     {
@@ -91,8 +93,27 @@ public class MPGenertaor : MonoBehaviour
         float Xposition = MinX;
         int Column = 0;
         float Zposition = MaxZ;
-        int Row = 0;        
+        int Row = 0;
+
+        // Spawns Bases
+        GameObject hBase = Instantiate(TilePrefabList[(int)TileType.HomeBase].Prefab);
+        hBase.transform.position = new Vector3((MapWidth / 2) - 1, 0, MapHeight / 2);
+
+        MapTile baseTile = hBase.GetComponent<MapTile>();
+        baseTile.Column = 19;
+        baseTile.Row = 0;
+
+        UpdateTileList(baseTile);
         
+        GameObject eBase = Instantiate(TilePrefabList[(int)TileType.EnemyBase].Prefab);
+        eBase.transform.position = new Vector3(-MapWidth / 2, 0, (-MapHeight / 2) + 1);
+        
+        MapTile enemyBaseTile = eBase.GetComponent<MapTile>();
+        enemyBaseTile.Column = 0;
+        enemyBaseTile.Row = 19;
+
+        UpdateTileList(enemyBaseTile);
+
         //Spawns Water Tile
         for (int i = 0; i < waterSeed; i++)
         {
@@ -204,7 +225,7 @@ public class MPGenertaor : MonoBehaviour
 
                 // Call the function to build water directly in order to build water before fill tiles
                 RockTileHandle tileHandle = newTileObj.GetComponent<RockTileHandle>();
-                tileHandle.GenerateLittleRocks();
+                tileHandle.GenerateLittleRocks(newTile);
             }
 
         }

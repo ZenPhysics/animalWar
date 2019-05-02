@@ -23,64 +23,61 @@ public class RockTileHandle : MonoBehaviour
         
     }
 
-    public void GenerateLittleRocks()
+    public void GenerateLittleRocks(MapTile tile)
     {
         var mpObj = GameObject.Find("MapManager");
-        mpGenertaor = mpObj.GetComponent<MPGenertaor>();
+        mpGenertaor = mpObj.GetComponent<MPGenertaor>();        
 
-        RockTile = RockPrefab.GetComponent<MapTile>();
-
-        //-------------- Hand Coded With Magic Numbers --------------//
         //----------- Needs To Be Condensed Down To Loops -----------//
 
-        MapTile ExistingTile = mpGenertaor.GetTileAt(RockTile.Column - 1, RockTile.Row);
+        MapTile ExistingTile = mpGenertaor.GetTileAt(tile.Column - 1, tile.Row);
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(RockPrefab.transform.position.x - 1, 0, RockPrefab.transform.position.z);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x - 1, 0, tile.transform.position.z);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
-            newTile.Column = RockTile.Column - 1;
-            newTile.Row = RockTile.Row;
+            newTile.Column = tile.Column - 1;
+            newTile.Row = tile.Row;
 
             mpGenertaor.UpdateTileList(newTile);
         }
 
-        ExistingTile = mpGenertaor.GetTileAt(RockTile.Column, RockTile.Row + 1);
+        ExistingTile = mpGenertaor.GetTileAt(tile.Column, tile.Row + 1);
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(RockPrefab.transform.position.x, 0, RockPrefab.transform.position.z + 1);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z - 1);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
-            newTile.Column = RockTile.Column;
-            newTile.Row = RockTile.Row + 1;
+            newTile.Column = tile.Column;
+            newTile.Row = tile.Row + 1;
 
             mpGenertaor.UpdateTileList(newTile);
         }
 
-        ExistingTile = mpGenertaor.GetTileAt(RockTile.Column + 1, RockTile.Row);
+        ExistingTile = mpGenertaor.GetTileAt(tile.Column + 1, tile.Row);
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(RockPrefab.transform.position.x + 1, 0, RockPrefab.transform.position.z);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x + 1, 0, tile.transform.position.z);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
-            newTile.Column = RockTile.Column + 1;
-            newTile.Row = RockTile.Row;
+            newTile.Column = tile.Column + 1;
+            newTile.Row = tile.Row;
 
             mpGenertaor.UpdateTileList(newTile);
         }
 
-        ExistingTile = mpGenertaor.GetTileAt(RockTile.Column, RockTile.Row - 1);
+        ExistingTile = mpGenertaor.GetTileAt(tile.Column, tile.Row - 1);
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(RockPrefab.transform.position.x, 0, RockPrefab.transform.position.z - 1);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z + 1);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
-            newTile.Column = RockTile.Column;
-            newTile.Row = RockTile.Row - 1;
+            newTile.Column = tile.Column;
+            newTile.Row = tile.Row - 1;
 
             mpGenertaor.UpdateTileList(newTile);
         }
