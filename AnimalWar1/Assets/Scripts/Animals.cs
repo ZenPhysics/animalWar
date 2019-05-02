@@ -54,18 +54,20 @@ public class Animals : MonoBehaviour
     //}
 
     public Transform Wolf;
-    public Transform Deer;
+    
     public Transform Moose;
     public Transform Bear;
     public Transform Fox;
+    public Transform Deer;
     public Transform Boar;
+    
 
     public Transform Dog;
     public Transform Cat;
     public Transform Bull;
     public Transform Rooster;
-    public Transform Rabbit;
     public Transform Pig;
+    public Transform Rabbit;
 
     enum SpecialAttacks
     {
@@ -297,8 +299,8 @@ public class Animals : MonoBehaviour
         foreach (GameObject Wild in WildAnimals)
             GameObject.Destroy(Wild);
 
-        GameObject[] TameAnimals = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject Tame in WildAnimals)
+        GameObject[] TameAnimals = GameObject.FindGameObjectsWithTag("TameAnimal");
+        foreach (GameObject Tame in TameAnimals)
             GameObject.Destroy(Tame);
     }
 }

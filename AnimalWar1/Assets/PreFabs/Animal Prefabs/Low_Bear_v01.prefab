@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 6972002240540939326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2491015371662919063}
   - {fileID: 3752442463095269771}
@@ -1066,7 +1066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dba2f8ec757b114ebdcf1b161eae173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 3
+  AnimalRow: 0
+  AnimalColumn: 0
+  MovementPoints: 0
   Health: 5
   Attack: 6
   Armor: 5
