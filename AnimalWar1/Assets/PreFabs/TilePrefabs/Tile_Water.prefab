@@ -49,7 +49,7 @@ MonoBehaviour:
   Column: 0
   Row: 0
   MovementCost: 2
-  CanWalkOver: 1
+  CanWalkOver: 0
   CanSwimThrough: 1
   CanFlyOver: 1
 --- !u!1 &4249363581313367803
@@ -76,7 +76,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4249363581313367803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4249363581047617537}

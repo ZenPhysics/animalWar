@@ -100,7 +100,7 @@ public class MPGenertaor : MonoBehaviour
         hBase.transform.position = new Vector3((MapWidth / 2) - 1, 0, MapHeight / 2);
 
         MapTile baseTile = hBase.GetComponent<MapTile>();
-        baseTile.Column = 19;
+        baseTile.Column = MapWidth - 1;
         baseTile.Row = 0;
 
         UpdateTileList(baseTile);
@@ -110,7 +110,7 @@ public class MPGenertaor : MonoBehaviour
         
         MapTile enemyBaseTile = eBase.GetComponent<MapTile>();
         enemyBaseTile.Column = 0;
-        enemyBaseTile.Row = 19;
+        enemyBaseTile.Row = MapHeight - 1;
 
         UpdateTileList(enemyBaseTile);
 

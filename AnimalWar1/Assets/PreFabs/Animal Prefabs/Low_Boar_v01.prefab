@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 1039589754189976897}
   - component: {fileID: 2047355832232397441}
   - component: {fileID: 8476027104102581609}
+  - component: {fileID: 5886431459312371352}
   m_Layer: 0
   m_Name: Low_Boar_v01
   m_TagString: WildAnimal
@@ -392,7 +393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalRow: 0
   AnimalColumn: 0
-  MovementPoints: 0
+  IsEnemy: 1
+  MovementPoints: 3
   Health: 3
   Attack: 4
   Armor: 3
@@ -400,7 +402,23 @@ MonoBehaviour:
   intimidation: 3
   Anthem: 0
   ResourceCost: 20
-  IsEnemy: 1
+  CanWalk: 1
+  CanFly: 0
+  CanSwim: 0
+  IsSelected: 0
+--- !u!65 &5886431459312371352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221140750670156783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.25, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2320491598382941974
 GameObject:
   m_ObjectHideFlags: 0

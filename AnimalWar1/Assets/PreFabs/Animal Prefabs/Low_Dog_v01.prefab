@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 7390554818792847652}
   - component: {fileID: 1681455912065577963}
   - component: {fileID: 2278847436439282341}
+  - component: {fileID: 7952905609934612612}
   m_Layer: 0
   m_Name: Low_Dog_v01
   m_TagString: TameAnimal
@@ -639,7 +640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalRow: 0
   AnimalColumn: 0
-  MovementPoints: 100
+  IsEnemy: 0
+  MovementPoints: 4
   Health: 4
   Attack: 5
   Armor: 5
@@ -647,7 +649,23 @@ MonoBehaviour:
   intimidation: 0
   Anthem: 4
   ResourceCost: 27
-  IsEnemy: 0
+  CanWalk: 1
+  CanFly: 0
+  CanSwim: 1
+  IsSelected: 0
+--- !u!65 &7952905609934612612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222910647991299737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.25}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1 &3265052493419039121
 GameObject:
   m_ObjectHideFlags: 0

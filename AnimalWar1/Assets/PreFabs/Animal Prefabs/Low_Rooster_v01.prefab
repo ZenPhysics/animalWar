@@ -1389,6 +1389,7 @@ GameObject:
   - component: {fileID: 6517673361276685130}
   - component: {fileID: 4418004903969805806}
   - component: {fileID: 6510416941560915995}
+  - component: {fileID: 6562520067317815692}
   m_Layer: 0
   m_Name: Low_Rooster_v01
   m_TagString: TameAnimal
@@ -1450,7 +1451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dba2f8ec757b114ebdcf1b161eae173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
+  AnimalRow: 0
+  AnimalColumn: 0
+  IsEnemy: 0
+  MovementPoints: 2
   Health: 2
   Attack: 2
   Armor: 4
@@ -1458,7 +1462,23 @@ MonoBehaviour:
   intimidation: 6
   Anthem: 0
   ResourceCost: 19
-  IsEnemy: 0
+  CanWalk: 1
+  CanFly: 1
+  CanSwim: 0
+  IsSelected: 0
+--- !u!65 &6562520067317815692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400263514862248058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.5, z: 0.75}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &8645327863767643356
 GameObject:
   m_ObjectHideFlags: 0

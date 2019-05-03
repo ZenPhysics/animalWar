@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 1970407919541543834}
   - component: {fileID: 9087107789450256163}
   - component: {fileID: 1078148991479930377}
+  - component: {fileID: 4159597728541480660}
   m_Layer: 0
   m_Name: Low_Moose_bull_v01
   m_TagString: WildAnimal
@@ -517,7 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalRow: 0
   AnimalColumn: 0
-  MovementPoints: 0
+  IsEnemy: 1
+  MovementPoints: 2
   Health: 5
   Attack: 4
   Armor: 6
@@ -525,7 +527,23 @@ MonoBehaviour:
   intimidation: 3
   Anthem: 0
   ResourceCost: 26
-  IsEnemy: 1
+  CanWalk: 1
+  CanFly: 0
+  CanSwim: 0
+  IsSelected: 0
+--- !u!65 &4159597728541480660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700239201097492173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 1, z: 0.5}
 --- !u!1 &1847922988348262165
 GameObject:
   m_ObjectHideFlags: 0

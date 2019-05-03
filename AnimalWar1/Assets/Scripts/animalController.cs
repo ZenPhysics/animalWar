@@ -7,6 +7,7 @@ public class animalController : MonoBehaviour
     public int AnimalRow;
     public int AnimalColumn;
 
+    public bool IsEnemy;
     public float MovementPoints;
     public float Health;
     public float Attack;
@@ -15,7 +16,10 @@ public class animalController : MonoBehaviour
     public int intimidation;
     public int Anthem;
     public int ResourceCost;
-    public bool IsEnemy;
+    public bool CanWalk;
+    public bool CanFly;
+    public bool CanSwim;
+    public bool IsSelected = false;
 
     private MPGenertaor mpGenertaor;
 
@@ -38,51 +42,74 @@ public class animalController : MonoBehaviour
         MoveCharacter();
     }
 
-    private void MoveCharacter()
+    public void MoveCharacter()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && IsSelected == true)
         {
             MapTile tileObj = mpGenertaor.GetTileAt((AnimalColumn + 1), AnimalRow);
-            if (MovementPoints - tileObj.MovementCost >= 0)
+            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
             {
-                MovementPoints -= tileObj.MovementCost;
-                transform.position = tileObj.GetConnectPoint().position;
-                AnimalColumn += 1;
-            }            
+                if (MovementPoints - tileObj.MovementCost >= 0)
+                {
+                    MovementPoints -= tileObj.MovementCost;
+                    transform.position = tileObj.GetConnectPoint().position;
+                    AnimalColumn += 1;
+                }
+            }                            
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && IsSelected == true)
         {
             MapTile tileObj = mpGenertaor.GetTileAt((AnimalColumn - 1), AnimalRow);
-            if (MovementPoints - tileObj.MovementCost >= 0)
+            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
             {
-                MovementPoints -= tileObj.MovementCost;
-                transform.position = tileObj.GetConnectPoint().position;
-                AnimalColumn -= 1;
-            }            
+                if (MovementPoints - tileObj.MovementCost >= 0)
+                {
+                    MovementPoints -= tileObj.MovementCost;
+                    transform.position = tileObj.GetConnectPoint().position;
+                    AnimalColumn -= 1;
+                }
+            }                            
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsSelected == true)
         {
             MapTile tileObj = mpGenertaor.GetTileAt(AnimalColumn, (AnimalRow - 1));
-            if (MovementPoints - tileObj.MovementCost >= 0)
+            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
             {
-                MovementPoints -= tileObj.MovementCost;
-                transform.position = tileObj.GetConnectPoint().position;
-                AnimalRow -= 1;
-            }            
+                if (MovementPoints - tileObj.MovementCost >= 0)
+                {
+                    MovementPoints -= tileObj.MovementCost;
+                    transform.position = tileObj.GetConnectPoint().position;
+                    AnimalRow -= 1;
+                }
+            }                            
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && IsSelected == true)
         {
             MapTile tileObj = mpGenertaor.GetTileAt(AnimalColumn, (AnimalRow + 1));
-            if (MovementPoints - tileObj.MovementCost >= 0)
+            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
             {
-                MovementPoints -= tileObj.MovementCost;
-                transform.position = tileObj.GetConnectPoint().position;
-                AnimalRow += 1;
-            }            
+                if (MovementPoints - tileObj.MovementCost >= 0)
+                {
+                    MovementPoints -= tileObj.MovementCost;
+                    transform.position = tileObj.GetConnectPoint().position;
+                    AnimalRow += 1;
+                }
+            }                        
         }
+    }
+
+    public void SelectUnit()
+    {
+        IsSelected = true;
+    }
+
+    public void UnselectUnit()
+    {
+        IsSelected = false;
+        Debug.Log("unit deselected");
     }
     private void FightEnemy()
     {

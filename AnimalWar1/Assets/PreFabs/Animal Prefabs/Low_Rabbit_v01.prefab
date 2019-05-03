@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3765458257482506310}
   - component: {fileID: 6532410824145520633}
   - component: {fileID: 7191342408820309791}
+  - component: {fileID: 4661656028799320986}
   m_Layer: 0
   m_Name: Low_Rabbit_v01
   m_TagString: TameAnimal
@@ -133,7 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dba2f8ec757b114ebdcf1b161eae173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  AnimalRow: 0
+  AnimalColumn: 0
+  IsEnemy: 0
+  MovementPoints: 5
   Health: 3
   Attack: 3
   Armor: 3
@@ -141,7 +145,23 @@ MonoBehaviour:
   intimidation: 0
   Anthem: 1
   ResourceCost: 18
-  IsEnemy: 0
+  CanWalk: 1
+  CanFly: 0
+  CanSwim: 0
+  IsSelected: 0
+--- !u!65 &4661656028799320986
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237714720346984605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &966114623726187515
 GameObject:
   m_ObjectHideFlags: 0

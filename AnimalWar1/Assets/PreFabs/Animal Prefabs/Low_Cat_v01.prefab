@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 3692738181207813447}
   - component: {fileID: 2476045695637426894}
   - component: {fileID: 6548140985411186}
+  - component: {fileID: 6737143077517327321}
   m_Layer: 0
   m_Name: Low_Cat_v01
   m_TagString: TameAnimal
@@ -1123,7 +1124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalRow: 0
   AnimalColumn: 0
-  MovementPoints: 0
+  IsEnemy: 0
+  MovementPoints: 3
   Health: 3
   Attack: 4
   Armor: 3
@@ -1131,7 +1133,23 @@ MonoBehaviour:
   intimidation: 0
   Anthem: 4
   ResourceCost: 3
-  IsEnemy: 0
+  CanWalk: 1
+  CanFly: 0
+  CanSwim: 0
+  IsSelected: 0
+--- !u!65 &6737143077517327321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777033167303951408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.75, z: 1}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &6213530152880484903
 GameObject:
   m_ObjectHideFlags: 0
