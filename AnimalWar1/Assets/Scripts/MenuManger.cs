@@ -32,9 +32,12 @@ public class MenuManger : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+           
                 Debug.Log("called Main Menu");
                 MainMenu.SetActive(true);
+            
         }
+        
     }
     public void ChangeMenu()
     {
