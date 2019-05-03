@@ -42,8 +42,8 @@ public class Resources : MonoBehaviour
     }
     void ShowMoney()
     {
-        Debug.Log("TameGold = " + TameGold);
-        Debug.Log("WildGold = " + WildGold);
+       // Debug.Log("TameGold = " + TameGold);
+        //Debug.Log("WildGold = " + WildGold);
         WildGoldText.text = ("TameGold = " + TameGold);
         TameGoldText.text = ("WildGold = " + WildGold);
     }
