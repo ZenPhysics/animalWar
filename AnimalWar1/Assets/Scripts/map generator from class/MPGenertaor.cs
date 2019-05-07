@@ -139,16 +139,18 @@ public class MPGenertaor : MonoBehaviour
             Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
             Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
             Column = (int)Xposition + (MapWidth / 2);
-            Row = (int)-(Zposition - (MapWidth / 2));
+            Row = (int)-(Zposition - MapWidth / 2);
 
+            Debug.Log("Water Started\nXposition:  " + Xposition + " Zposition: " +Zposition);
+            Debug.Log("Column: " + Column + " Row: " + Row);
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
             {               
                 // Spawn tile at new coord
                 GameObject newTileObj = SpawnOtherTile(TileType.DeepWater, Xposition, Zposition);
-                MapTile newTile = newTileObj.GetComponent<MapTile>();              
+                MapTile newTile = newTileObj.GetComponent<MapTile>();
 
-
+                Debug.Log("Water Spawned");
                 // Set column and row on new tile
                 newTile.Column = Column;
                 newTile.Row = Row;
@@ -167,18 +169,19 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i < mountainSeed; i++)
         {
             // Get coord for new tile
-            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
-            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Xposition = Random.Range((int)MinX + 1, (int)MaxX - 1);
+            Zposition = Random.Range((int)MinZ + 1, (int)MaxZ - 1);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - (MapWidth / 2));
 
+            Debug.Log("Mountain Started");
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
             {
                 // Spawn tile at new coord
                 GameObject newTileObj = SpawnOtherTile(TileType.Mountain, Xposition, Zposition);
                 MapTile newTile = newTileObj.GetComponent<MapTile>();
-
+                Debug.Log("mountain spawned");
 
                 // Set column and row on new tile
                 newTile.Column = Column;
@@ -194,8 +197,8 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i < forestSeed; i++)
         {
             // Get coord for new tile
-            Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
-            Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
+            Xposition = Random.Range((int)MinX + 1, (int)MaxX - 1);
+            Zposition = Random.Range((int)MinZ + 1, (int)MaxZ - 1);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - (MapWidth / 2));
 
