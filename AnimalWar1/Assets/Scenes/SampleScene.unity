@@ -1632,6 +1632,8 @@ MonoBehaviour:
   Rooster: {fileID: 6517673361276685130, guid: 3d92cb96166a0db469d363be8e4dd3e4, type: 3}
   Pig: {fileID: 624021931015170638, guid: 84661a4af41c7b24fa810e4c1cd4f5b0, type: 3}
   Rabbit: {fileID: 3765458257482506310, guid: 1fd70c6ad2bf98d4ca6b243562af0cd8, type: 3}
+  HomeSpawnLoc: {x: 0, y: 0, z: 0}
+  EnemySpawnLoc: {x: 0, y: 0, z: 0}
 --- !u!114 &745289539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4065275750905406314, guid: 7e282105fed436a46930f0e851ab8e5f,
@@ -1834,12 +1836,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552f4ef1e04d8354da6f7cb70b99432a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapWidth: 10
-  MapHeight: 10
-  waterSeed: 1
-  mountainSeed: 5
-  forestSeed: 20
-  rockSeed: 1
+  MapWidth: 20
+  MapHeight: 20
+  waterSeed: 2
+  mountainSeed: 8
+  forestSeed: 25
+  rockSeed: 3
   FillTile: 0
   TilePrefabList:
   - type: 0
@@ -2366,13 +2368,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1204510440}
     - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1204510440}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: GenerateMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219099021619473356, guid: e64fd53ab7680574a8367c43abcf3446,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1219099021619475507, guid: e64fd53ab7680574a8367c43abcf3446,
         type: 3}

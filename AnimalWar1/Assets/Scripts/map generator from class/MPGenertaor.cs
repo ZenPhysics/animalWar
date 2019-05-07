@@ -48,6 +48,8 @@ public class MPGenertaor : MonoBehaviour
     public List<FillTilePrefabEntry> FillTilePrefabList;    
     public List<MapTile> TileList = new List<MapTile>();
 
+    private Animals animals;
+
     public int GetMapWidth()
     {
         return MapWidth;
@@ -56,6 +58,9 @@ public class MPGenertaor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var animalObj = GameObject.Find("AnimalManager");
+        animals = animalObj.GetComponent<Animals>();
+
         InitializeTileList();
         GenerateMap();
     }
@@ -74,6 +79,17 @@ public class MPGenertaor : MonoBehaviour
         {
             //Set every entry in list to null
             TileList.Add(null);
+        }
+    }
+
+    public void ClearBoard()
+    {
+        int mapArea = MapHeight * MapWidth;
+        for (int i = 0; i < mapArea; ++i)
+        {
+            GameObject obj = TileList[i].gameObject;            
+            TileList[i] = null;
+            GameObject.Destroy(obj);
         }
     }
 
@@ -98,15 +114,17 @@ public class MPGenertaor : MonoBehaviour
         // Spawns Bases
         GameObject hBase = Instantiate(TilePrefabList[(int)TileType.HomeBase].Prefab);
         hBase.transform.position = new Vector3((MapWidth / 2) - 1, 0, MapHeight / 2);
+        animals.SetHomeSpawn(hBase.transform.position);
 
         MapTile baseTile = hBase.GetComponent<MapTile>();
         baseTile.Column = MapWidth - 1;
         baseTile.Row = 0;
 
-        UpdateTileList(baseTile);
+        UpdateTileList(baseTile);       
         
         GameObject eBase = Instantiate(TilePrefabList[(int)TileType.EnemyBase].Prefab);
         eBase.transform.position = new Vector3(-MapWidth / 2, 0, (-MapHeight / 2) + 1);
+        animals.SetEnemySpawn(eBase.transform.position);
         
         MapTile enemyBaseTile = eBase.GetComponent<MapTile>();
         enemyBaseTile.Column = 0;
