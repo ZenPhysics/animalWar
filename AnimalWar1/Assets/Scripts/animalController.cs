@@ -20,13 +20,19 @@ public class animalController : MonoBehaviour
     public bool CanFly;
     public bool CanSwim;
     public bool IsSelected = false;
+    public float TotalPointsPerTurn;
 
     private MPGenertaor mpGenertaor;
+
+    
 
 
     // Start is called before the first frame update
     void Start()
+        
+       // TotalPointsPerTurn += MovementPoints; 
     {
+        TotalPointsPerTurn = MovementPoints;
         // Getting Reference To Map Generator in Able to Use Helper Functions
         var mapObj = GameObject.Find("MapManager");
         mpGenertaor = mapObj.GetComponent<MPGenertaor>();
@@ -118,5 +124,9 @@ public class animalController : MonoBehaviour
     private void InteractWithTile()
     {
 
+    }
+    private void ResetMovement()
+    {
+        MovementPoints = TotalPointsPerTurn;
     }
 }

@@ -23,10 +23,12 @@ public class CameraMove : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
             transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
             transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
         }
 

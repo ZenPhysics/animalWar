@@ -36,13 +36,13 @@ public class Resources : MonoBehaviour
         //}
     }
 
-    void AddMoney()
+    public void AddMoney()
     {
-        TameGold += (25 + 2*WildResourceTilesControlled);
-        WildGold += (25 + 2*TameResourceTilesControlled);
+        TameGold += (25); //+ 2*WildResourceTilesControlled);
+        WildGold += (25); //+ 2*TameResourceTilesControlled);
         ShowMoney();
     }
-    void ShowMoney()
+    public void ShowMoney()
     {
        // Debug.Log("TameGold = " + TameGold);
         //Debug.Log("WildGold = " + WildGold);
