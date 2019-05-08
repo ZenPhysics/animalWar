@@ -8,6 +8,7 @@ public class MenuManger : MonoBehaviour
     public bool isWild = true;
     public GameObject CanvasTame;
     public GameObject CanvasWild;
+
     public GameObject MainMenu;
 
     // Start is called before the first frame update

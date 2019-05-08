@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float CameraSpeed = 5.0f;
+    public float scroll = 2.0f;
+    public float zoomSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -14,21 +16,37 @@ public class CameraMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        //Zoom
+
+        //float scroll = Input.GetAxis("Mouse ScrollWheel");
+        //transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
-            transform.position = new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
-            transform.position = new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+
+        //Movement
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(0, speed * Time.deltaTime, 0);
+            transform.position += Vector3.right * CameraSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position = new Vector3(0, speed * Time.deltaTime, 0);
+            transform.position += Vector3.left * CameraSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += Vector3.forward * CameraSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += Vector3.back * CameraSpeed * Time.deltaTime;
         }
     }
 }
+

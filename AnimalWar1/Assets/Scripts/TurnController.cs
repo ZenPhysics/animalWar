@@ -7,12 +7,23 @@ public class TurnController : MonoBehaviour
     public enum BattleState
     {
         START,
+        LOOK,
         BUILD,
         MOVE,
+        COMBAT,
         END,
         LOSE,
         WIN
     }
+
+    public GameObject menuObject;
+
+
+    public GameObject CanvasTame;
+    public GameObject CanvasWild;
+   
+
+    public bool isWildTurn;
 
     private BattleState currentState;
 
@@ -23,23 +34,48 @@ public class TurnController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(currentState);
+        Debug.Log(currentState);
 
         switch (currentState)
         {
+
             case (BattleState.START):
                 //START FUNCTIONS
                 break;
 
+            case (BattleState.LOOK):
+                //Look function
+                break;
+
             case (BattleState.BUILD):
                 //BUILDING FUNCTIONS
+                if (isWildTurn)
+                {
+                    menuObject.GetComponent<MenuManger>().CallWildMenu();
+                }
+                else
+                {
+                    menuObject.GetComponent<MenuManger>().CallTameMenu();
+                }
                 break;
 
             case (BattleState.MOVE):
-                //MOVEMENT SCRIPT
+                menuObject.GetComponent<MenuManger>().TurnOffMenu();
                 break;
+
+            case (BattleState.COMBAT):
+                //Combat mechanics
+                break;
+            
             case (BattleState.END):
-                //END TURN FUNCTIONS
+                if (isWildTurn)
+                {
+                    isWildTurn = false;
+                }
+                else
+                {
+                    isWildTurn = true;
+                }
                 break;
 
             case (BattleState.WIN):
@@ -56,10 +92,15 @@ public class TurnController : MonoBehaviour
         if (GUILayout.Button("NEXT STATE"))
         {
             if (currentState == BattleState.START)
+                currentState = BattleState.LOOK;
+
+            else if (currentState == BattleState.LOOK)
                 currentState = BattleState.BUILD;
             else if (currentState == BattleState.BUILD)
                 currentState = BattleState.MOVE;
             else if (currentState == BattleState.MOVE)
+                currentState = BattleState.COMBAT;
+            else if (currentState == BattleState.COMBAT)
                 currentState = BattleState.END;
             else if (currentState == BattleState.END)
                 currentState = BattleState.LOSE;

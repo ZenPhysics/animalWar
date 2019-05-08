@@ -21,24 +21,26 @@ public class Resources : MonoBehaviour
         elapsed = 0f;
         WildResourceTilesControlled = 5;
         TameResourceTilesControlled = 1;
+        ShowMoney();
     }
 
     // Update is called once per frame
     void Update()
     {
-        elapsed += Time.deltaTime;
-        if (elapsed >= 1f)
-        {
-            elapsed = elapsed % 1f;
-            AddMoney();
-            ShowMoney();
-        }
+        //elapsed += Time.deltaTime;
+        //if (elapsed >= 1f)
+        //{
+        //    elapsed = elapsed % 1f;
+        //    AddMoney();
+        //    ShowMoney();
+        //}
     }
 
     void AddMoney()
     {
-        TameGold += (1 * WildResourceTilesControlled);
-        WildGold += (1 * TameResourceTilesControlled);
+        TameGold += (25 + 2*WildResourceTilesControlled);
+        WildGold += (25 + 2*TameResourceTilesControlled);
+        ShowMoney();
     }
     void ShowMoney()
     {
