@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,8 +19,11 @@ public class GameManager : MonoBehaviour
         {
             GameObject unitRef = IsMouseOnUnit(Input.mousePosition);
 
+            Debug.Log("Mouse Was clicked, unit ref" + (unitRef == null ? "NULL" : "NOT NULL"));
+
             if (unitRef != null)
             {
+                Debug.Log("Mouse is over a unit");
                 if (PreviousUnit != null)
                 {
                     animalController previousController = PreviousUnit.GetComponent<animalController>();
@@ -41,13 +41,19 @@ public class GameManager : MonoBehaviour
     {
         RaycastHit hitPoint;
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out hitPoint, Mathf.Infinity))
+        // Bit shift the index of the layer (9) to get a bit mask for animal layer
+        int layerMask = 1 << 9;
+        if (Physics.Raycast(ray, out hitPoint, Mathf.Infinity, layerMask))
         {
             if (hitPoint.collider.tag == "WildAnimal" || hitPoint.collider.tag == "TameAnimal")
             {
                 Debug.Log("Hit Unit");
                 GameObject unityRef = hitPoint.transform.gameObject;
                 return unityRef;
+            }
+            else
+            {
+                Debug.Log("Ray hit something, but it wasn't an animal");
             }
         }
         else

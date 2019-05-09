@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CoinScript : MonoBehaviour
 {
-
+    public GameObject ResourceObject;
     public AudioSource collectSound;
 
 

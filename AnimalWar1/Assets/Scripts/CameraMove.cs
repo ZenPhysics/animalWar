@@ -7,6 +7,7 @@ public class CameraMove : MonoBehaviour
     public float CameraSpeed = 5.0f;
     public float scroll = 2.0f;
     public float zoomSpeed;
+    public Camera myCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +25,12 @@ public class CameraMove : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
             float scroll = Input.GetAxis("Mouse ScrollWheel");
-            transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
+            myCamera.orthographicSize -= 1;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
             float scroll = Input.GetAxis("Mouse ScrollWheel");
-            transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
+            myCamera.orthographicSize += 1;
         }
 
         //Movement

@@ -112,6 +112,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157504666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157504668}
+  - component: {fileID: 157504667}
+  m_Layer: 0
+  m_Name: PointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157504667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157504666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1826fe0a30e64e44a9df4118b62028fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointList:
+  - Type: 0
+    Prefab: {fileID: 2729336438268634683, guid: d442e39e265324d16839c08499717904,
+      type: 3}
+  - Type: 1
+    Prefab: {fileID: 6315069250517098464, guid: fa899cd7b7a0149abb8247ed3b652302,
+      type: 3}
+  - Type: 2
+    Prefab: {fileID: 7449069768427573457, guid: a54e9d8afa2f00346b5374885a6d2198,
+      type: 3}
+  MapWidth: 20
+  MapHeight: 20
+--- !u!4 &157504668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157504666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.017962, y: 8.701345, z: 13.251046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1398,7 @@ MonoBehaviour:
   CameraSpeed: 5
   scroll: 2
   zoomSpeed: 0
+  myCamera: {fileID: 0}
 --- !u!1 &571025641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2211,7 @@ MonoBehaviour:
   CameraSpeed: 5
   scroll: 2
   zoomSpeed: 0
+  myCamera: {fileID: 1572880450}
 --- !u!81 &1572880449
 AudioListener:
   m_ObjectHideFlags: 0

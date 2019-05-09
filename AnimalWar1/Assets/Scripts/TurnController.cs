@@ -33,6 +33,7 @@ public class TurnController : MonoBehaviour
     {
         currentState = BattleState.START;
         TurnMachine();
+        isWildTurn = false;
         //isWildTurn = false;
     }
 
@@ -47,11 +48,20 @@ public class TurnController : MonoBehaviour
                 //START FUNCTIONS
                 //animalMovement.GetComponent<animalController>().ResetMovement();
 
-                ResourceObject.GetComponent<Resources>().AddMoney();
+              
                 break;
 
             case (BattleState.LOOK):
                 //Look function
+                if (!isWildTurn)
+                {
+                    ResourceObject.GetComponent<Resources>().AddMoneyTame();
+                }
+                else
+                {
+                    ResourceObject.GetComponent<Resources>().AddMoneyWild();
+                }
+             
                 break;
 
             case (BattleState.BUILD):
