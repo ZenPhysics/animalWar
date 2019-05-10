@@ -101,19 +101,29 @@ public class MPGenertaor : MonoBehaviour
 
     public void GenerateMap()
     {
+        float halfMapWidth = (float)MapWidth / 2.0f;
+        float halfMapHeight = (float)MapHeight / 2.0f;
+
+        /*
         float MinX = -MapWidth/2;
         float MaxZ = MapHeight/2;
         float MaxX = MapWidth/2;
         float MinZ = -MapHeight/2;
+        */
+
+        float MinX = -halfMapWidth;
+        float MaxZ = halfMapHeight;
+        float MaxX = halfMapWidth;
+        float MinZ = -halfMapHeight;
 
         float Xposition = MinX;
         int Column = 0;
         float Zposition = MaxZ;
         int Row = 0;
-
+        
         // Spawns Bases
         GameObject hBase = Instantiate(TilePrefabList[(int)TileType.HomeBase].Prefab);
-        hBase.transform.position = new Vector3((MapWidth / 2) - 1, 0, MapHeight / 2);
+        hBase.transform.position = new Vector3(((float)MapWidth / 2) - 1, 0, (float)-MapHeight / 2);
         animals.SetHomeSpawn(hBase.transform.position);
 
         MapTile baseTile = hBase.GetComponent<MapTile>();
@@ -123,7 +133,7 @@ public class MPGenertaor : MonoBehaviour
         UpdateTileList(baseTile);       
         
         GameObject eBase = Instantiate(TilePrefabList[(int)TileType.EnemyBase].Prefab);
-        eBase.transform.position = new Vector3(-MapWidth / 2, 0, (-MapHeight / 2) + 1);
+        eBase.transform.position = new Vector3((float)-MapWidth / 2, 0, ((float)MapHeight / 2) - 1);
         animals.SetEnemySpawn(eBase.transform.position);
         
         MapTile enemyBaseTile = eBase.GetComponent<MapTile>();
@@ -131,18 +141,27 @@ public class MPGenertaor : MonoBehaviour
         enemyBaseTile.Row = MapHeight - 1;
 
         UpdateTileList(enemyBaseTile);
-
+        
         //Spawns Water Tile
         for (int i = 0; i < waterSeed; i++)
         {
             // Get coord for new tile
+
+            /*
             Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
             Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - MapWidth / 2);
+            */
+            
+            Column = Random.Range(2, MapWidth - 2);
+            Row = Random.Range(2, MapHeight - 2);
+            Xposition = MinX + (float)Column;
+            Zposition = MinZ + (float)Row;
+            
 
-            Debug.Log("Water Started\nXposition:  " + Xposition + " Zposition: " +Zposition);
-            Debug.Log("Column: " + Column + " Row: " + Row);
+            //Debug.Log("Water Started\nXposition:  " + Xposition + " Zposition: " +Zposition);
+            //Debug.Log("Column: " + Column + " Row: " + Row);
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
             {               
@@ -161,6 +180,7 @@ public class MPGenertaor : MonoBehaviour
                 // Call the function to build water directly in order to build water before fill tiles
                 WaterTileHandle tileHandle = newTileObj.GetComponent<WaterTileHandle>();
                 tileHandle.GenerateWaterTiles();
+                
             }
                 
         }
@@ -169,19 +189,29 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i < mountainSeed; i++)
         {
             // Get coord for new tile
+
+            /*
             Xposition = Random.Range((int)MinX + 1, (int)MaxX - 1);
             Zposition = Random.Range((int)MinZ + 1, (int)MaxZ - 1);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - (MapWidth / 2));
+            */
 
-            Debug.Log("Mountain Started");
+            Column = Random.Range(1, MapWidth - 1);
+            Row = Random.Range(1, MapHeight - 1);
+            Xposition = MinX + (float)Column;
+            Zposition = MinZ + (float)Row;
+
+            //Debug.Log("Mountain Started");
+
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
             {
                 // Spawn tile at new coord
                 GameObject newTileObj = SpawnOtherTile(TileType.Mountain, Xposition, Zposition);
                 MapTile newTile = newTileObj.GetComponent<MapTile>();
-                Debug.Log("mountain spawned");
+
+                //Debug.Log("mountain spawned");
 
                 // Set column and row on new tile
                 newTile.Column = Column;
@@ -197,10 +227,18 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i < forestSeed; i++)
         {
             // Get coord for new tile
+
+            /*
             Xposition = Random.Range((int)MinX + 1, (int)MaxX - 1);
             Zposition = Random.Range((int)MinZ + 1, (int)MaxZ - 1);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - (MapWidth / 2));
+            */
+
+            Column = Random.Range(1, MapWidth - 1);
+            Row = Random.Range(1, MapHeight - 1);
+            Xposition = MinX + (float)Column;
+            Zposition = MinZ + (float)Row;
 
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
@@ -224,10 +262,18 @@ public class MPGenertaor : MonoBehaviour
         for (int i = 0; i < rockSeed; i++)
         {
             // Get coord for new tile
+
+            /*
             Xposition = Random.Range((int)MinX + 2, (int)MaxX - 2);
             Zposition = Random.Range((int)MinZ + 2, (int)MaxZ - 2);
             Column = (int)Xposition + (MapWidth / 2);
             Row = (int)-(Zposition - (MapWidth / 2));
+            */
+
+            Column = Random.Range(2, MapWidth - 2);
+            Row = Random.Range(2, MapHeight - 2);
+            Xposition = MinX + (float)Column;
+            Zposition = MinZ + (float)Row;
 
             MapTile existingTile = GetTileAt(Column, Row);
             if (existingTile == null)
@@ -248,12 +294,12 @@ public class MPGenertaor : MonoBehaviour
                 RockTileHandle tileHandle = newTileObj.GetComponent<RockTileHandle>();
                 tileHandle.GenerateLittleRocks(newTile);
             }
-
         }
+        
 
         // Reset Xposition and Zposition before spawning fill tile
         Xposition = MinX;
-        Zposition = MaxZ;
+        Zposition = MinZ;
         Column = 0;
         Row = 0;
         
@@ -280,7 +326,7 @@ public class MPGenertaor : MonoBehaviour
                 Xposition++;
                 Column++; 
             }
-            Zposition--;
+            Zposition++;
             Row++;
             
             Xposition = MinX;

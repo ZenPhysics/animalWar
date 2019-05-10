@@ -47,7 +47,7 @@ public class RockTileHandle : MonoBehaviour
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z - 1);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z + 1);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
             newTile.Column = tile.Column;
@@ -73,7 +73,7 @@ public class RockTileHandle : MonoBehaviour
         if (ExistingTile == null)
         {
             GameObject newLittleRockTile = Instantiate(LittleRockPrefab);
-            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z + 1);
+            newLittleRockTile.transform.position = new Vector3(tile.transform.position.x, 0, tile.transform.position.z - 1);
 
             MapTile newTile = newLittleRockTile.GetComponent<MapTile>();
             newTile.Column = tile.Column;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1699,6 +1699,7 @@ MonoBehaviour:
   Rabbit: {fileID: 3765458257482506310, guid: 1fd70c6ad2bf98d4ca6b243562af0cd8, type: 3}
   HomeSpawnLoc: {x: 0, y: 0, z: 0}
   EnemySpawnLoc: {x: 0, y: 0, z: 0}
+  ResourceObject: {fileID: 0}
 --- !u!114 &745289539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4065275750905406314, guid: 7e282105fed436a46930f0e851ab8e5f,
@@ -1902,7 +1903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapWidth: 20
-  MapHeight: 20
+  MapHeight: 80
   waterSeed: 5
   mountainSeed: 10
   forestSeed: 25
@@ -2406,8 +2407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WildGoldText: {fileID: 745289539}
   TameGoldText: {fileID: 1091355774}
-  WildResourceTilesControlled: 0
-  TameResourceTilesControlled: 0
 --- !u!1001 &1702027363
 PrefabInstance:
   m_ObjectHideFlags: 0

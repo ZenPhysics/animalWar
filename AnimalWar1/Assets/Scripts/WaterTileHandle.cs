@@ -40,7 +40,7 @@ public class WaterTileHandle : MonoBehaviour
                 if (ExistingTile == null)
                 {
                     GameObject newWaterTile = Instantiate(WaterPrefab);
-                    newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + x, 0, DeepWaterPrefab.transform.position.z - z);                    
+                    newWaterTile.transform.position = new Vector3(DeepWaterPrefab.transform.position.x + x, 0, DeepWaterPrefab.transform.position.z + z);                    
 
                     MapTile newTile = newWaterTile.GetComponent<MapTile>();
                     newTile.Column = DeepWaterTile.Column + x;
