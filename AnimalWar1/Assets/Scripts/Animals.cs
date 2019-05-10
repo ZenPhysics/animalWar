@@ -73,6 +73,8 @@ public class Animals : MonoBehaviour
     public Vector3 HomeSpawnLoc;
     public Vector3 EnemySpawnLoc;
 
+    public GameObject ResourceObject;
+
     enum SpecialAttacks
     {
 
@@ -99,8 +101,7 @@ public class Animals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InstantiateAnimal(AnimalType.Deer);
-        
+        ResourceObject = GameObject.FindGameObjectWithTag("Resource");
     }
 
     // Update is called once per frame
@@ -118,6 +119,7 @@ public class Animals : MonoBehaviour
                 var newWolf = Instantiate(Wolf, EnemySpawnLoc, Quaternion.identity);
                 var Script = newWolf.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(25);
                 //Script.MoveSpeed = 4;
                 //Script.Health = 4;
                 //Script.Attack = 4;
@@ -133,6 +135,7 @@ public class Animals : MonoBehaviour
                 var newDeer = Instantiate(Deer, EnemySpawnLoc, Quaternion.identity);
                 var Script1 = newDeer.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script1);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(15);
                 //Script1.MoveSpeed = 4;
                 //Script1.Health = 4;
                 //Script1.Attack = 4;
@@ -148,6 +151,7 @@ public class Animals : MonoBehaviour
                 var newMoose = Instantiate(Moose, EnemySpawnLoc, Quaternion.identity);
                 var Script2 = newMoose.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script2);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(26);
                 //Script2.MoveSpeed = 4;
                 //Script2.Health = 4;
                 //Script2.Attack = 4;
@@ -163,6 +167,7 @@ public class Animals : MonoBehaviour
                 var newBear = Instantiate(Bear, EnemySpawnLoc, Quaternion.identity);
                 var Script3 = newBear.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script3);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(28);
                 //Script3.MoveSpeed = 4;
                 //Script3.Health = 4;
                 //Script3.Attack = 4;
@@ -178,6 +183,7 @@ public class Animals : MonoBehaviour
                 var newFox = Instantiate(Fox, EnemySpawnLoc, Quaternion.identity);
                 var Script4 = newFox.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script4);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(18);
                 //Script4.MoveSpeed = 4;
                 //Script4.Health = 4;
                 //Script4.Attack = 4;
@@ -193,6 +199,7 @@ public class Animals : MonoBehaviour
                 var newBoar = Instantiate(Boar, EnemySpawnLoc, Quaternion.identity);
                 var Script5 = newBoar.GetComponent<animalController>();
                 AnimalList.AddAnimal(Script5);
+                ResourceObject.GetComponent<Resources>().PayMoneyWild(20);
                 //Script5.MoveSpeed = 4;
                 //Script5.Health = 4;
                 //Script5.Attack = 4;
@@ -211,6 +218,7 @@ public class Animals : MonoBehaviour
                 var newDog = Instantiate(Dog, HomeSpawnLoc, Quaternion.identity);
                 var eScript = newDog.GetComponent<animalController>();
                 AnimalList.AddAnimal(eScript);
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(27);
                 //eScript.MoveSpeed = 4;
                 //eScript.Health = 4;
                 //eScript.Attack = 4;
@@ -226,6 +234,7 @@ public class Animals : MonoBehaviour
                 var newCat = Instantiate(Cat, HomeSpawnLoc, Quaternion.identity);
                 var eScript1 = newCat.GetComponent<animalController>();
                 AnimalList.AddAnimal(eScript1);
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(20);
                 //eScript1.MoveSpeed = 4;
                 //eScript1.Health = 4;
                 //eScript1.Attack = 4;
@@ -240,6 +249,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Bull");
                 var newBull = Instantiate(Bull, HomeSpawnLoc, Quaternion.identity);
                 var eScript2 = newBull.GetComponent<animalController>();
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(29);
                 AnimalList.AddAnimal(eScript2);
                 //eScript2.MoveSpeed = 4;
                 //eScript2.Health = 4;
@@ -255,6 +265,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You choose Rooster");
                 var newRooster = Instantiate(Rooster, HomeSpawnLoc, Quaternion.identity);
                 var eScript3 = newRooster.GetComponent<animalController>();
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(19);
                 AnimalList.AddAnimal(eScript3);
                 //eScript3.MoveSpeed = 4;
                 //eScript3.Health = 4;
@@ -270,6 +281,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You Chose Rabbit");
                 var newRabbit = Instantiate(Rabbit, HomeSpawnLoc, Quaternion.identity);
                 var eScript4 = newRabbit.GetComponent<animalController>();
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(18);
                 AnimalList.AddAnimal(eScript4);
                 //eScript4.MoveSpeed = 4;
                 //eScript4.Health = 4;
@@ -285,6 +297,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Pig");
                 var newPig = Instantiate(Pig, HomeSpawnLoc, Quaternion.identity);
                 var eScript5 = newPig.GetComponent<animalController>();
+                ResourceObject.GetComponent<Resources>().PayMoneyTame(20);
                 AnimalList.AddAnimal(eScript5);
                 //eScript5.MoveSpeed = 4;
                 //eScript5.Health = 4;

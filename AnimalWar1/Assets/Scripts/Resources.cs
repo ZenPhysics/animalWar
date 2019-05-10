@@ -7,45 +7,31 @@ public class Resources : MonoBehaviour
 {
     private float TameGold;
     private int WildGold;
-    private float elapsed;
     public Text WildGoldText;
     public Text TameGoldText;
-    public int WildResourceTilesControlled;
-    public int TameResourceTilesControlled;
 
     // Start is called before the first frame update
     void Start()
     {
         TameGold = 100;
         WildGold = 100;
-        elapsed = 0f;
-        WildResourceTilesControlled = 5;
-        TameResourceTilesControlled = 1;
         ShowMoney();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //elapsed += Time.deltaTime;
-        //if (elapsed >= 1f)
-        //{
-        //    elapsed = elapsed % 1f;
-        //    AddMoney();
-        //    ShowMoney();
-        //}
+     
     }
 
     public void AddMoney()
     {
-        TameGold += (25); //+ 2*WildResourceTilesControlled);
-        WildGold += (25); //+ 2*TameResourceTilesControlled);
+        TameGold += (25); 
+        WildGold += (25); 
         ShowMoney();
     }
     public void ShowMoney()
     {
-       // Debug.Log("TameGold = " + TameGold);
-        //Debug.Log("WildGold = " + WildGold);
         WildGoldText.text = ("WildGold = " + WildGold);
         TameGoldText.text = ("TameGold = " + TameGold);
     }
@@ -56,12 +42,25 @@ public class Resources : MonoBehaviour
     }
     public void AddMoneyTame()
     {
-        TameGold += (25); //+ 2*WildResourceTilesControlled);
+        TameGold += (25); 
         ShowMoney();
     }
     public void AddMoneyWild()
     {
-        WildGold += (25); //+ 2*TameResourceTilesControlled);
+        WildGold += (25); 
         ShowMoney();
     }
+    public void PayMoneyWild(int pointCost)
+    {
+        WildGold -= (pointCost);
+        ShowMoney();
+    }
+    public void PayMoneyTame(int pointCost)
+    {
+        TameGold -= (pointCost); 
+        ShowMoney();
+    }
+
+
+
 }
