@@ -47,8 +47,8 @@ public class TurnController : MonoBehaviour
             case (BattleState.START):
                 //START FUNCTIONS
                 //animalMovement.GetComponent<animalController>().ResetMovement();
+                AnimalList.ResetAnimals();
 
-              
                 break;
 
             case (BattleState.LOOK):

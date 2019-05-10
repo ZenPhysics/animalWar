@@ -125,7 +125,7 @@ public class animalController : MonoBehaviour
     {
 
     }
-    private void ResetMovement()
+    public void ResetMovement()
     {
         MovementPoints = TotalPointsPerTurn;
     }

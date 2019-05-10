@@ -11,7 +11,7 @@ public class GemScript : MonoBehaviour
 
     void Start()
     {
-
+        ResourceObject = GameObject.FindGameObjectWithTag("Resource");
     }
     void Update()
     {
@@ -24,8 +24,17 @@ public class GemScript : MonoBehaviour
         //This could change become add money
 
         GemtSound.Play();
-        ScoringSystem.theScore += 80;
-        // Destroy Coin when we picked up
+        if (other.gameObject.tag == "WildAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+        }
+        else if (other.gameObject.tag == "TameAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+
+        }
         Destroy(gameObject);
 
     }

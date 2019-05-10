@@ -7,6 +7,7 @@ TagManager:
   - WildAnimal
   - TameAnimal
   - Point
+  - Resource
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class DiamondScript : MonoBehaviour
 
     void Start()
     {
-
+        ResourceObject = GameObject.FindGameObjectWithTag("Resource");
     }
     void Update()
     {
@@ -27,17 +27,31 @@ public class DiamondScript : MonoBehaviour
         //Add score
         DiamondSound.Play();
 
-        
-        
-      // ResourceObject.GetComponent<Resources>().AddMoneyTame();
-        
-      
-       
-       //ResourceObject.GetComponent<Resources>().AddMoneyWild();
-       
-        //ScoringSystem.theScore += 100;
-        // Destroy Coin when we picked up
+        //Destroy(gameObject);
+
+        if (other.gameObject.tag == "WildAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+        }
+        else if(other.gameObject.tag == "TameAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+
+        }
         Destroy(gameObject);
 
+
+
+        //ResourceObject.GetComponent<Resources>().AddMoneyWild();
+
+        //ScoringSystem.theScore += 100;
+        // Destroy Coin when we picked up
+        // Destroy(gameObject);
+
     }
+   
 }

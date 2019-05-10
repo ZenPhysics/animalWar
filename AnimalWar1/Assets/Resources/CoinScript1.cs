@@ -24,6 +24,7 @@ public class CoinScript1 : MonoBehaviour
         //This could change become add money
         //Add score
         collectSound.Play();
+
         ScoringSystem.theScore += 50;
         // Destroy Coin when we picked up
         Destroy(gameObject); 

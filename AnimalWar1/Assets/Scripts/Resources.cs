@@ -46,8 +46,8 @@ public class Resources : MonoBehaviour
     {
        // Debug.Log("TameGold = " + TameGold);
         //Debug.Log("WildGold = " + WildGold);
-        WildGoldText.text = ("TameGold = " + TameGold);
-        TameGoldText.text = ("WildGold = " + WildGold);
+        WildGoldText.text = ("WildGold = " + WildGold);
+        TameGoldText.text = ("TameGold = " + TameGold);
     }
     void ResetMoney()
     {

@@ -117,6 +117,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Wolf");
                 var newWolf = Instantiate(Wolf, EnemySpawnLoc, Quaternion.identity);
                 var Script = newWolf.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script);
                 //Script.MoveSpeed = 4;
                 //Script.Health = 4;
                 //Script.Attack = 4;
@@ -131,6 +132,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Deer");
                 var newDeer = Instantiate(Deer, EnemySpawnLoc, Quaternion.identity);
                 var Script1 = newDeer.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script1);
                 //Script1.MoveSpeed = 4;
                 //Script1.Health = 4;
                 //Script1.Attack = 4;
@@ -145,6 +147,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Moose");
                 var newMoose = Instantiate(Moose, EnemySpawnLoc, Quaternion.identity);
                 var Script2 = newMoose.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script2);
                 //Script2.MoveSpeed = 4;
                 //Script2.Health = 4;
                 //Script2.Attack = 4;
@@ -159,6 +162,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You choose Bear");
                 var newBear = Instantiate(Bear, EnemySpawnLoc, Quaternion.identity);
                 var Script3 = newBear.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script3);
                 //Script3.MoveSpeed = 4;
                 //Script3.Health = 4;
                 //Script3.Attack = 4;
@@ -173,6 +177,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You Chose Fox");
                 var newFox = Instantiate(Fox, EnemySpawnLoc, Quaternion.identity);
                 var Script4 = newFox.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script4);
                 //Script4.MoveSpeed = 4;
                 //Script4.Health = 4;
                 //Script4.Attack = 4;
@@ -187,6 +192,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Boar");
                 var newBoar = Instantiate(Boar, EnemySpawnLoc, Quaternion.identity);
                 var Script5 = newBoar.GetComponent<animalController>();
+                AnimalList.AddAnimal(Script5);
                 //Script5.MoveSpeed = 4;
                 //Script5.Health = 4;
                 //Script5.Attack = 4;
@@ -204,6 +210,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Dog");
                 var newDog = Instantiate(Dog, HomeSpawnLoc, Quaternion.identity);
                 var eScript = newDog.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript);
                 //eScript.MoveSpeed = 4;
                 //eScript.Health = 4;
                 //eScript.Attack = 4;
@@ -218,6 +225,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Cat");
                 var newCat = Instantiate(Cat, HomeSpawnLoc, Quaternion.identity);
                 var eScript1 = newCat.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript1);
                 //eScript1.MoveSpeed = 4;
                 //eScript1.Health = 4;
                 //eScript1.Attack = 4;
@@ -232,6 +240,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Bull");
                 var newBull = Instantiate(Bull, HomeSpawnLoc, Quaternion.identity);
                 var eScript2 = newBull.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript2);
                 //eScript2.MoveSpeed = 4;
                 //eScript2.Health = 4;
                 //eScript2.Attack = 4;
@@ -246,6 +255,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You choose Rooster");
                 var newRooster = Instantiate(Rooster, HomeSpawnLoc, Quaternion.identity);
                 var eScript3 = newRooster.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript3);
                 //eScript3.MoveSpeed = 4;
                 //eScript3.Health = 4;
                 //eScript3.Attack = 4;
@@ -260,6 +270,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You Chose Rabbit");
                 var newRabbit = Instantiate(Rabbit, HomeSpawnLoc, Quaternion.identity);
                 var eScript4 = newRabbit.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript4);
                 //eScript4.MoveSpeed = 4;
                 //eScript4.Health = 4;
                 //eScript4.Attack = 4;
@@ -274,6 +285,7 @@ public class Animals : MonoBehaviour
                 Debug.Log("You chose Pig");
                 var newPig = Instantiate(Pig, HomeSpawnLoc, Quaternion.identity);
                 var eScript5 = newPig.GetComponent<animalController>();
+                AnimalList.AddAnimal(eScript5);
                 //eScript5.MoveSpeed = 4;
                 //eScript5.Health = 4;
                 //eScript5.Attack = 4;

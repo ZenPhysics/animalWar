@@ -20,7 +20,7 @@ static class AnimalList
     {
         foreach (var a in Animals)
         {
-            //a.Reset();
+            a.MovementPoints = a.TotalPointsPerTurn;
         }
     }
 }

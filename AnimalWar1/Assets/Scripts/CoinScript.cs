@@ -8,6 +8,10 @@ public class CoinScript : MonoBehaviour
     public GameObject ResourceObject;
     public AudioSource collectSound;
 
+    private void Start()
+    {
+        ResourceObject = GameObject.FindGameObjectWithTag("Resource");
+    }
 
     void Update()
     {
@@ -18,9 +22,17 @@ public class CoinScript : MonoBehaviour
     {
         //Add score
         collectSound.Play();
-        ScoringSystem.theScore += 50;
-        // Destroy Coin when we picked up
-        Destroy(gameObject); 
+
+        if (other.gameObject.tag == "WildAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyWild();
+        }
+        else if (other.gameObject.tag == "TameAnimal")
+        {
+            ResourceObject.GetComponent<Resources>().AddMoneyTame();
+
+        }
+        Destroy(gameObject);
 
     }
 }
