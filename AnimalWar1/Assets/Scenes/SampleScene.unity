@@ -1685,21 +1685,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041ae66ad80e80d46a258886b3b2770c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wolf: {fileID: 8461592637362711191, guid: 9dce3181ce1d0b74bbf44dd25f7a2b07, type: 3}
-  Moose: {fileID: 1970407919541543834, guid: a8e6eb7149e3a844f982c878fbddbbb3, type: 3}
-  Bear: {fileID: 8797988850101048763, guid: 630aec03c5690554ab08569b53987da5, type: 3}
-  Fox: {fileID: 2482097944862904698, guid: e71d8083c25b56a418f9131765745cfe, type: 3}
-  Deer: {fileID: 5301313550562592629, guid: 0bbd1809e357d29428404e5a699e65c9, type: 3}
-  Boar: {fileID: 1039589754189976897, guid: 5b519beb905f6204cb2835d4c007765d, type: 3}
-  Dog: {fileID: 7390554818792847652, guid: 078d19b80baa8f94da8af891c46122d6, type: 3}
-  Cat: {fileID: 3692738181207813447, guid: ea85db09db349e346ab9164aee3cb538, type: 3}
-  Bull: {fileID: 7101959918685710426, guid: 6420245cc8c8c2d40b2ea6a55adb5e6e, type: 3}
-  Rooster: {fileID: 6517673361276685130, guid: 3d92cb96166a0db469d363be8e4dd3e4, type: 3}
-  Pig: {fileID: 624021931015170638, guid: 84661a4af41c7b24fa810e4c1cd4f5b0, type: 3}
-  Rabbit: {fileID: 3765458257482506310, guid: 1fd70c6ad2bf98d4ca6b243562af0cd8, type: 3}
-  HomeSpawnLoc: {x: 0, y: 0, z: 0}
-  EnemySpawnLoc: {x: 0, y: 0, z: 0}
+  Wolf: {fileID: 4144294433065608391, guid: 9dce3181ce1d0b74bbf44dd25f7a2b07, type: 3}
+  Moose: {fileID: 1700239201097492173, guid: a8e6eb7149e3a844f982c878fbddbbb3, type: 3}
+  Bear: {fileID: 6972002240540939326, guid: 630aec03c5690554ab08569b53987da5, type: 3}
+  Fox: {fileID: 8535057601192132937, guid: e71d8083c25b56a418f9131765745cfe, type: 3}
+  Deer: {fileID: 4343736242226514411, guid: 0bbd1809e357d29428404e5a699e65c9, type: 3}
+  Boar: {fileID: 2221140750670156783, guid: 5b519beb905f6204cb2835d4c007765d, type: 3}
+  Dog: {fileID: 3222910647991299737, guid: 078d19b80baa8f94da8af891c46122d6, type: 3}
+  Cat: {fileID: 5777033167303951408, guid: ea85db09db349e346ab9164aee3cb538, type: 3}
+  Bull: {fileID: 2923694345936071188, guid: 6420245cc8c8c2d40b2ea6a55adb5e6e, type: 3}
+  Rooster: {fileID: 8400263514862248058, guid: 3d92cb96166a0db469d363be8e4dd3e4, type: 3}
+  Pig: {fileID: 2060448826684587418, guid: 84661a4af41c7b24fa810e4c1cd4f5b0, type: 3}
+  Rabbit: {fileID: 237714720346984605, guid: 1fd70c6ad2bf98d4ca6b243562af0cd8, type: 3}
+  HomeSpawnCol: 0
+  HomeSpawnRow: 0
+  EnemySpawnCol: 0
+  EnemySpawnRow: 0
+  homeSpawn: {x: 0, y: 0, z: 0}
+  enemySpawn: {x: 0, y: 0, z: 0}
   ResourceObject: {fileID: 0}
+  animalList: []
 --- !u!114 &745289539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4065275750905406314, guid: 7e282105fed436a46930f0e851ab8e5f,
@@ -1902,8 +1907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552f4ef1e04d8354da6f7cb70b99432a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapWidth: 20
-  MapHeight: 80
+  MapWidth: 15
+  MapHeight: 15
   waterSeed: 5
   mountainSeed: 10
   forestSeed: 25

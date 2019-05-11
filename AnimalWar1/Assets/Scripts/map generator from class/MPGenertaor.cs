@@ -124,21 +124,23 @@ public class MPGenertaor : MonoBehaviour
         // Spawns Bases
         GameObject hBase = Instantiate(TilePrefabList[(int)TileType.HomeBase].Prefab);
         hBase.transform.position = new Vector3(((float)MapWidth / 2) - 1, 0, (float)-MapHeight / 2);
-        animals.SetHomeSpawn(hBase.transform.position);
 
         MapTile baseTile = hBase.GetComponent<MapTile>();
         baseTile.Column = MapWidth - 1;
         baseTile.Row = 0;
 
+        animals.SetHomeSpawn(baseTile.Column, baseTile.Row);
+
         UpdateTileList(baseTile);       
         
         GameObject eBase = Instantiate(TilePrefabList[(int)TileType.EnemyBase].Prefab);
         eBase.transform.position = new Vector3((float)-MapWidth / 2, 0, ((float)MapHeight / 2) - 1);
-        animals.SetEnemySpawn(eBase.transform.position);
         
         MapTile enemyBaseTile = eBase.GetComponent<MapTile>();
         enemyBaseTile.Column = 0;
         enemyBaseTile.Row = MapHeight - 1;
+
+        animals.SetEnemySpawn(enemyBaseTile.Column, enemyBaseTile.Row);
 
         UpdateTileList(enemyBaseTile);
         

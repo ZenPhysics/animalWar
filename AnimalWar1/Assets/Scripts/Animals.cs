@@ -54,24 +54,29 @@ public class Animals : MonoBehaviour
     //}
     
 
-    public Transform Wolf;
+    public GameObject Wolf;
     
-    public Transform Moose;
-    public Transform Bear;
-    public Transform Fox;
-    public Transform Deer;
-    public Transform Boar;
+    public GameObject Moose;
+    public GameObject Bear;
+    public GameObject Fox;
+    public GameObject Deer;
+    public GameObject Boar;
     
 
-    public Transform Dog;
-    public Transform Cat;
-    public Transform Bull;
-    public Transform Rooster;
-    public Transform Pig;
-    public Transform Rabbit;
+    public GameObject Dog;
+    public GameObject Cat;
+    public GameObject Bull;
+    public GameObject Rooster;
+    public GameObject Pig;
+    public GameObject Rabbit;
 
-    public Vector3 HomeSpawnLoc;
-    public Vector3 EnemySpawnLoc;
+    public int HomeSpawnCol;
+    public int HomeSpawnRow;
+    public int EnemySpawnCol;
+    public int EnemySpawnRow;
+
+    public Vector3 homeSpawn;
+    public Vector3 enemySpawn;
 
     public GameObject ResourceObject;
 
@@ -96,12 +101,16 @@ public class Animals : MonoBehaviour
         Rabbit,
         Pig
     }
+    MPGenertaor mpGenertaor;
 
-
+    public List<animalController> animalList = new List<animalController>();
     // Start is called before the first frame update
     void Start()
     {
         ResourceObject = GameObject.FindGameObjectWithTag("Resource");
+
+        var mapObj = GameObject.Find("MapManager");
+        mpGenertaor = mapObj.GetComponent<MPGenertaor>();
     }
 
     // Update is called once per frame
@@ -112,13 +121,21 @@ public class Animals : MonoBehaviour
 
     public void InstantiateAnimal(int switchNumber)
     {
+        homeSpawn = mpGenertaor.GetTileAt(HomeSpawnCol, HomeSpawnRow).transform.position;
+        enemySpawn = mpGenertaor.GetTileAt(EnemySpawnCol, EnemySpawnRow).transform.position;
         switch (switchNumber)
         {
+            
             case 1:
                 Debug.Log("You chose Wolf");
-                var newWolf = Instantiate(Wolf, EnemySpawnLoc, Quaternion.identity);
-                var Script = newWolf.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script);
+                GameObject newWolf = Instantiate(Wolf);
+                newWolf.transform.position = enemySpawn;
+                animalController Script = newWolf.GetComponent<animalController>();
+
+                Script.AnimalColumn = EnemySpawnCol;
+                Script.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script);
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(25);
                 //Script.MoveSpeed = 4;
                 //Script.Health = 4;
@@ -132,9 +149,13 @@ public class Animals : MonoBehaviour
 
             case 2:
                 Debug.Log("You chose Deer");
-                var newDeer = Instantiate(Deer, EnemySpawnLoc, Quaternion.identity);
-                var Script1 = newDeer.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script1);
+                GameObject newDeer = Instantiate(Deer, enemySpawn, Quaternion.identity);
+                animalController Script1 = newDeer.GetComponent<animalController>();
+
+                Script1.AnimalColumn = EnemySpawnCol;
+                Script1.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script1);
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(15);
                 //Script1.MoveSpeed = 4;
                 //Script1.Health = 4;
@@ -148,9 +169,14 @@ public class Animals : MonoBehaviour
 
             case 3:
                 Debug.Log("You chose Moose");
-                var newMoose = Instantiate(Moose, EnemySpawnLoc, Quaternion.identity);
-                var Script2 = newMoose.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script2);
+                GameObject newMoose = Instantiate(Moose, enemySpawn, Quaternion.identity);
+                animalController Script2 = newMoose.GetComponent<animalController>();
+
+                Script2.AnimalColumn = EnemySpawnCol;
+                Script2.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script2);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(26);
                 //Script2.MoveSpeed = 4;
                 //Script2.Health = 4;
@@ -164,9 +190,14 @@ public class Animals : MonoBehaviour
 
             case 4:
                 Debug.Log("You choose Bear");
-                var newBear = Instantiate(Bear, EnemySpawnLoc, Quaternion.identity);
-                var Script3 = newBear.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script3);
+                GameObject newBear = Instantiate(Bear, enemySpawn, Quaternion.identity);
+                animalController Script3 = newBear.GetComponent<animalController>();
+
+                Script3.AnimalColumn = EnemySpawnCol;
+                Script3.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script3);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(28);
                 //Script3.MoveSpeed = 4;
                 //Script3.Health = 4;
@@ -180,9 +211,14 @@ public class Animals : MonoBehaviour
 
             case 5:
                 Debug.Log("You Chose Fox");
-                var newFox = Instantiate(Fox, EnemySpawnLoc, Quaternion.identity);
-                var Script4 = newFox.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script4);
+                GameObject newFox = Instantiate(Fox, enemySpawn, Quaternion.identity);
+                animalController Script4 = newFox.GetComponent<animalController>();
+
+                Script4.AnimalColumn = EnemySpawnCol;
+                Script4.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script4);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(18);
                 //Script4.MoveSpeed = 4;
                 //Script4.Health = 4;
@@ -196,9 +232,14 @@ public class Animals : MonoBehaviour
 
             case 6:
                 Debug.Log("You chose Boar");
-                var newBoar = Instantiate(Boar, EnemySpawnLoc, Quaternion.identity);
-                var Script5 = newBoar.GetComponent<animalController>();
-                AnimalList.AddAnimal(Script5);
+                GameObject newBoar = Instantiate(Boar, enemySpawn, Quaternion.identity);
+                animalController Script5 = newBoar.GetComponent<animalController>();
+
+                Script5.AnimalColumn = EnemySpawnCol;
+                Script5.AnimalRow = EnemySpawnRow;
+
+                animalList.Add(Script5);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyWild(20);
                 //Script5.MoveSpeed = 4;
                 //Script5.Health = 4;
@@ -215,9 +256,14 @@ public class Animals : MonoBehaviour
 
             case 7:
                 Debug.Log("You chose Dog");
-                var newDog = Instantiate(Dog, HomeSpawnLoc, Quaternion.identity);
-                var eScript = newDog.GetComponent<animalController>();
-                AnimalList.AddAnimal(eScript);
+                GameObject newDog = Instantiate(Dog, homeSpawn, Quaternion.identity);
+                animalController eScript = newDog.GetComponent<animalController>();
+
+                eScript.AnimalColumn = HomeSpawnCol;
+                eScript.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(27);
                 //eScript.MoveSpeed = 4;
                 //eScript.Health = 4;
@@ -231,9 +277,14 @@ public class Animals : MonoBehaviour
 
             case 8:
                 Debug.Log("You chose Cat");
-                var newCat = Instantiate(Cat, HomeSpawnLoc, Quaternion.identity);
-                var eScript1 = newCat.GetComponent<animalController>();
-                AnimalList.AddAnimal(eScript1);
+                GameObject newCat = Instantiate(Cat, homeSpawn, Quaternion.identity);
+                animalController eScript1 = newCat.GetComponent<animalController>();
+
+                eScript1.AnimalColumn = HomeSpawnCol;
+                eScript1.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript1);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(20);
                 //eScript1.MoveSpeed = 4;
                 //eScript1.Health = 4;
@@ -247,10 +298,18 @@ public class Animals : MonoBehaviour
 
             case 9:
                 Debug.Log("You chose Bull");
-                var newBull = Instantiate(Bull, HomeSpawnLoc, Quaternion.identity);
-                var eScript2 = newBull.GetComponent<animalController>();
+                GameObject newBull = Instantiate(Bull, homeSpawn, Quaternion.identity);
+                animalController eScript2 = newBull.GetComponent<animalController>();
+
+                eScript2.AnimalColumn = HomeSpawnCol;
+                eScript2.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript2);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(29);
-                AnimalList.AddAnimal(eScript2);
+
+
+
                 //eScript2.MoveSpeed = 4;
                 //eScript2.Health = 4;
                 //eScript2.Attack = 4;
@@ -263,10 +322,15 @@ public class Animals : MonoBehaviour
 
             case 10:
                 Debug.Log("You choose Rooster");
-                var newRooster = Instantiate(Rooster, HomeSpawnLoc, Quaternion.identity);
-                var eScript3 = newRooster.GetComponent<animalController>();
+                GameObject newRooster = Instantiate(Rooster, homeSpawn, Quaternion.identity);
+                animalController eScript3 = newRooster.GetComponent<animalController>();
+
+                eScript3.AnimalColumn = HomeSpawnCol;
+                eScript3.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript3);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(19);
-                AnimalList.AddAnimal(eScript3);
                 //eScript3.MoveSpeed = 4;
                 //eScript3.Health = 4;
                 //eScript3.Attack = 4;
@@ -279,10 +343,15 @@ public class Animals : MonoBehaviour
 
             case 11:
                 Debug.Log("You Chose Rabbit");
-                var newRabbit = Instantiate(Rabbit, HomeSpawnLoc, Quaternion.identity);
-                var eScript4 = newRabbit.GetComponent<animalController>();
+                GameObject newRabbit = Instantiate(Rabbit, homeSpawn, Quaternion.identity);
+                animalController eScript4 = newRabbit.GetComponent<animalController>();
+
+                eScript4.AnimalColumn = HomeSpawnCol;
+                eScript4.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript4);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(18);
-                AnimalList.AddAnimal(eScript4);
                 //eScript4.MoveSpeed = 4;
                 //eScript4.Health = 4;
                 //eScript4.Attack = 4;
@@ -295,10 +364,15 @@ public class Animals : MonoBehaviour
 
             case 12:
                 Debug.Log("You chose Pig");
-                var newPig = Instantiate(Pig, HomeSpawnLoc, Quaternion.identity);
-                var eScript5 = newPig.GetComponent<animalController>();
+                GameObject newPig = Instantiate(Pig, homeSpawn, Quaternion.identity);
+                animalController eScript5 = newPig.GetComponent<animalController>();
+
+                eScript5.AnimalColumn = HomeSpawnCol;
+                eScript5.AnimalRow = HomeSpawnRow;
+
+                animalList.Add(eScript5);
+
                 ResourceObject.GetComponent<Resources>().PayMoneyTame(20);
-                AnimalList.AddAnimal(eScript5);
                 //eScript5.MoveSpeed = 4;
                 //eScript5.Health = 4;
                 //eScript5.Attack = 4;
@@ -334,12 +408,14 @@ public class Animals : MonoBehaviour
             GameObject.Destroy(Tame);
     }
 
-    public void SetHomeSpawn(Vector3 pos)
+    public void SetHomeSpawn(int col, int row)
     {
-        HomeSpawnLoc = pos - new Vector3(1, 0, 0);
+        HomeSpawnCol = col;
+        HomeSpawnRow = row;
     }
-    public void SetEnemySpawn(Vector3 pos)
+    public void SetEnemySpawn(int col, int row)
     {
-        EnemySpawnLoc = pos + new Vector3(1, 0, 0);
+        EnemySpawnCol = col;
+        EnemySpawnRow = row;
     }
 }

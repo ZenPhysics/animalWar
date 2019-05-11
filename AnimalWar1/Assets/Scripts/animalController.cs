@@ -35,11 +35,7 @@ public class animalController : MonoBehaviour
         TotalPointsPerTurn = MovementPoints;
         // Getting Reference To Map Generator in Able to Use Helper Functions
         var mapObj = GameObject.Find("MapManager");
-        mpGenertaor = mapObj.GetComponent<MPGenertaor>();
-
-        // Setting Up Columns and Rows Positions
-        AnimalColumn = (int)transform.position.x + (mpGenertaor.GetMapWidth() / 2);
-        AnimalRow = (int)-(transform.position.z - (mpGenertaor.GetMapWidth() / 2));        
+        mpGenertaor = mapObj.GetComponent<MPGenertaor>();        
     }
 
     // Update is called once per frame
@@ -80,20 +76,6 @@ public class animalController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && IsSelected == true)
         {
-            MapTile tileObj = mpGenertaor.GetTileAt(AnimalColumn, (AnimalRow - 1));
-            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
-            {
-                if (MovementPoints - tileObj.MovementCost >= 0)
-                {
-                    MovementPoints -= tileObj.MovementCost;
-                    transform.position = tileObj.GetConnectPoint().position;
-                    AnimalRow -= 1;
-                }
-            }                            
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) && IsSelected == true)
-        {
             MapTile tileObj = mpGenertaor.GetTileAt(AnimalColumn, (AnimalRow + 1));
             if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
             {
@@ -102,6 +84,20 @@ public class animalController : MonoBehaviour
                     MovementPoints -= tileObj.MovementCost;
                     transform.position = tileObj.GetConnectPoint().position;
                     AnimalRow += 1;
+                }
+            }                            
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && IsSelected == true)
+        {
+            MapTile tileObj = mpGenertaor.GetTileAt(AnimalColumn, (AnimalRow - 1));
+            if (tileObj.CanWalkOver == CanWalk || tileObj.CanSwimThrough == CanSwim || tileObj.CanFlyOver == CanFly)
+            {
+                if (MovementPoints - tileObj.MovementCost >= 0)
+                {
+                    MovementPoints -= tileObj.MovementCost;
+                    transform.position = tileObj.GetConnectPoint().position;
+                    AnimalRow -= 1;
                 }
             }                        
         }
