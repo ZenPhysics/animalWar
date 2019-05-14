@@ -24,6 +24,8 @@ public class animalController : MonoBehaviour
 
     private MPGenertaor mpGenertaor;
 
+    public bool hasAttacked;
+
     
 
 
@@ -35,7 +37,8 @@ public class animalController : MonoBehaviour
         TotalPointsPerTurn = MovementPoints;
         // Getting Reference To Map Generator in Able to Use Helper Functions
         var mapObj = GameObject.Find("MapManager");
-        mpGenertaor = mapObj.GetComponent<MPGenertaor>();        
+        mpGenertaor = mapObj.GetComponent<MPGenertaor>();
+        hasAttacked = false;
     }
 
     // Update is called once per frame

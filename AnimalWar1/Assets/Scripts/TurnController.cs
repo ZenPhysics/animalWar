@@ -48,6 +48,7 @@ public class TurnController : MonoBehaviour
                 //START FUNCTIONS
                 //animalMovement.GetComponent<animalController>().ResetMovement();
                 AnimalList.ResetAnimals();
+                Debug.Log("////////////////reset animals should be called");
 
                 break;
 
@@ -109,58 +110,53 @@ public class TurnController : MonoBehaviour
     {
        
     }
-    void OnGUI()
+    public void ChangeState()
     {
-        if (GUILayout.Button("NEXT STATE"))
+        if (currentState == BattleState.START)
         {
-            if (currentState == BattleState.START)
-            {
-                currentState = BattleState.LOOK;
-                TurnMachine();
-            }
-            else if (currentState == BattleState.LOOK)
-            {
-                currentState = BattleState.BUILD;
-                TurnMachine();
-            }
-            else if (currentState == BattleState.BUILD)
-            {
-                currentState = BattleState.MOVE;
-                TurnMachine();
-            }
-               
-            else if (currentState == BattleState.MOVE)
-            {
-                currentState = BattleState.COMBAT;
-                TurnMachine();
-            }
-                
-            else if (currentState == BattleState.COMBAT)
-            {
-                currentState = BattleState.END;
-                TurnMachine();
-            }
-            else if (currentState == BattleState.END)
-            {
-                currentState = BattleState.LOSE;
-                TurnMachine();
-            }
-                
-            else if (currentState == BattleState.LOSE)
-            {
-                currentState = BattleState.WIN;
-                TurnMachine();
-            }
-                
-            else if (currentState == BattleState.WIN)
-            {
-                currentState = BattleState.START;
-                TurnMachine();
-            }
-                
-
-
+            currentState = BattleState.LOOK;
+            TurnMachine();
         }
+        else if (currentState == BattleState.LOOK)
+        {
+            currentState = BattleState.BUILD;
+            TurnMachine();
+        }
+        else if (currentState == BattleState.BUILD)
+        {
+            currentState = BattleState.MOVE;
+            TurnMachine();
+        }
+
+        else if (currentState == BattleState.MOVE)
+        {
+            currentState = BattleState.COMBAT;
+            TurnMachine();
+        }
+
+        else if (currentState == BattleState.COMBAT)
+        {
+            currentState = BattleState.END;
+            TurnMachine();
+        }
+        else if (currentState == BattleState.END)
+        {
+            //currentState = BattleState.LOSE;
+            //TurnMachine();
+            currentState = BattleState.START;
+            TurnMachine();
+        }
+        //else if (currentState == BattleState.LOSE)
+        //{
+        //    currentState = BattleState.WIN;
+        //    TurnMachine();
+        //}
+
+        //else if (currentState == BattleState.WIN)
+        //{
+        //    currentState = BattleState.START;
+        //    TurnMachine();
+        //}        
     }
 
 }
