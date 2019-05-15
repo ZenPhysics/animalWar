@@ -888,7 +888,7 @@ MonoBehaviour:
   AnimalRow: 0
   AnimalColumn: 0
   IsEnemy: 1
-  MovementPoints: 50
+  MovementPoints: 4
   Health: 4
   Attack: 5
   Armor: 3
@@ -901,6 +901,7 @@ MonoBehaviour:
   CanSwim: 1
   IsSelected: 0
   TotalPointsPerTurn: 0
+  hasAttacked: 0
 --- !u!65 &5408478010787482892
 BoxCollider:
   m_ObjectHideFlags: 0
